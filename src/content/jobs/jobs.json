@@ -1,0 +1,38 @@
+[
+  {
+    "company": "Google",
+    "duration": { "from": "2022", "to": "2023" },
+    "description": "Optimized code review process for Google software engineers by analyzing utilization patterns and identifying opportunities to optimize usage, resulting in increased efficiency productivity and user satisfaction.",
+    "technologies": ["TypeScript", "Angular", "VSCode API"]
+  },
+  {
+    "company": "Zühlke",
+    "duration": { "from": "2019", "to": "2022" },
+    "description": "Build, style, ship and maintain high-quality, customer-facing websites for various clients. Supported backend integration for improved system cohesion.",
+    "technologies": ["TypeScript", "Angular", "Stencil", "React"]
+  },
+  {
+    "company": "MaibornWolff",
+    "duration": { "from": "2017", "to": "2018" },
+    "description": "Developed immersive VR and AR applications using Unity with the goal to explore benefits in various business sectors.",
+    "technologies": ["Unity", "Virtual Reality", "C#"]
+  },
+  {
+    "company": "BMW",
+    "duration": { "from": "2016", "to": "2017" },
+    "description": "Explored and implemented a custom interior control app for the users smartphone, focusing on improving user experience and comfort.",
+    "technologies": ["Android", "Reverse Engineering"]
+  },
+  {
+    "company": "KundoXT",
+    "duration": { "from": "2016", "to": "" },
+    "description": "Lead front end development in a small team developing a platform-agnostic smart home app.",
+    "technologies": ["JavaScript", "Angular", "Apache Cordova"]
+  },
+  {
+    "company": "Audi",
+    "duration": { "from": "2015", "to": "" },
+    "description": "Implemented an in-car VR prototype and reasearched user acceptance and motion sickness.",
+    "technologies": ["Unity", "Virtual Reality", "C#"]
+  }
+]
