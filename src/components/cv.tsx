@@ -30,7 +30,11 @@ const CV = () => (
       <div className="flex gap-4">
         <Button href="mailto:contact@jmattes.de">Contact me</Button>
 
-        <Button href="/resume.pdf" color="blue-light">
+        <Button
+          href="/resume.pdf"
+          color="blue-light"
+          title="Opens resume PDF in a new tab"
+        >
           Download resume
         </Button>
       </div>

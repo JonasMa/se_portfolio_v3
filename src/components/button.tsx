@@ -4,7 +4,8 @@ const Button: React.FC<{
   children: React.ReactNode;
   href?: string;
   color?: 'yellow' | 'blue-light';
-}> = ({ children, href, color = 'yellow' }) => {
+  title?: string;
+}> = ({ children, href, color = 'yellow', title }) => {
   // We can't construct the color dynamically because tailwind will only recognise unbroken class strings in the source code
   const borderColor =
     color === 'yellow' ? 'border-yellow' : 'border-blue-light';
@@ -17,6 +18,7 @@ const Button: React.FC<{
       role="button"
       target="_blank"
       rel="noopener noreferrer"
+      title={title}
       className={`block w-max mt-6 px-3 py-2 border-2 ${borderColor} ${textColor} relative group hover:text-blue-dark hover:transition-all`}
     >
       {children}

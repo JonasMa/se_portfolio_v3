@@ -33,6 +33,7 @@ export default function Jobs() {
         href="/resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
+        title="Opens resume PDF in a new tab."
       >
         &rarr; &nbsp; Download my resume
       </a>
