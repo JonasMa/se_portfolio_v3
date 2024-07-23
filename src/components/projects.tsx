@@ -7,7 +7,7 @@ export default function Projects() {
     <div className="flex flex-col md:grid md:grid-cols-2-auto gap-x-8 gap-y-4">
       {projects.map(
         (
-          { company, title, duration, description, technologies, link },
+          { company, title, duration, description, technologies, artifact },
           index
         ) => [
           <div
@@ -23,10 +23,10 @@ export default function Projects() {
           <div key={`${index}-1`}>
             <h4 className="font-sans font-bold mb-4">{title}</h4>
             {description}
-            {link && (
+            {artifact && (
               <div className="col-start-2 underline text-blue-light mt-2">
-                <a href={link} target="_blank" rel="noreferrer">
-                  Artifacts
+                <a href={artifact.link} target="_blank" rel="noreferrer">
+                  {artifact.name}
                 </a>
               </div>
             )}

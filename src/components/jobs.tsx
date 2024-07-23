@@ -29,20 +29,12 @@ export default function Jobs() {
         />,
       ])}
       <a
-        className="hidden md:block font-sans text-blue-light justify-self-end"
-        href="/resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        &rarr;
-      </a>
-      <a
         className="font-sans text-blue-light underline col-start-2"
         href="/resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Download my resume
+        &rarr; &nbsp; Download my resume
       </a>
     </div>
   );

@@ -4,16 +4,14 @@
     "title": "Streamlining Code Review",
     "duration": { "from": "2022", "to": "2023" },
     "description": "Worked on Googles internal code review platform, always trying to optimize for user satisfaction and efficiency. Planned and reviewed features based on usage statistics. Oversaw deployment and supported users. ",
-    "technologies": ["Angular", "TypeScript", "NgRx", "RxJs"],
-    "link": ""
+    "technologies": ["Angular", "TypeScript", "NgRx", "RxJs"]
   },
   {
     "company": "Google",
     "title": "Code Review IDE Integration",
     "duration": { "from": "2022", "to": "2023" },
     "description": "Integrating code review artifacts into the VSCode based IDE to make it easier and faster to work on code feedback.",
-    "technologies": ["TypeScript", "VSCode API", "RxJs"],
-    "link": ""
+    "technologies": ["TypeScript", "VSCode API", "RxJs"]
   },
   {
     "company": "Visana",
@@ -28,7 +26,10 @@
       "Karma",
       "Java"
     ],
-    "link": "https://dap.visana.ch/offer/"
+    "artifact": {
+      "name": "Insurance Calculator",
+      "link": "https://dap.visana.ch/offer/"
+    }
   },
   {
     "company": "SBB",
@@ -43,7 +44,10 @@
       "Webpack",
       "Java"
     ],
-    "link": "https://www.watson.ch/schweiz/sbb/867901656-sbb-so-sieht-der-neue-billetautomat-aus"
+    "artifact": {
+      "name": "Press article",
+      "link": "https://www.watson.ch/schweiz/sbb/867901656-sbb-so-sieht-der-neue-billetautomat-aus"
+    }
   },
   {
     "company": "SBB",
@@ -51,7 +55,10 @@
     "duration": { "from": "2020", "to": "2021" },
     "description": "Developed cross-browser compatible library to track user behavour and displayed contents.",
     "technologies": ["JavaScript", "Karma", "Babel", "Webpack", "BrowserStack"],
-    "link": "https://www.npmjs.com/package/@swissfederalrailways/internet-tracking"
+    "artifact": {
+      "name": "NPM package",
+      "link": "https://www.npmjs.com/package/@swissfederalrailways/internet-tracking"
+    }
   },
   {
     "company": "Zühlke",
@@ -59,31 +66,31 @@
     "duration": { "from": "2019", "to": "2020" },
     "description": "Mobile-first, card-based quiz which let's users playfully learn about security topics.",
     "technologies": ["React", "JavaScript", "Redux", "Jest"],
-    "link": "https://appsource.microsoft.com/en-us/product/web-apps/zuehlke-engineering.secured"
+    "artifact": {
+      "name": "Microsoft Appsource",
+      "link": "https://appsource.microsoft.com/en-us/product/web-apps/zuehlke-engineering.secured"
+    }
   },
   {
     "company": "MaibornWolff",
     "title": "Technological Research in AR & VR",
     "duration": { "from": "2017", "to": "2018" },
     "description": "AR prototype to overlook and maintain conveyor belts in a factory. Analyzing its performance with a user-study.",
-    "technologies": ["Unity", "C#", "HoloLens"],
-    "link": ""
+    "technologies": ["Unity", "C#", "HoloLens"]
   },
   {
     "company": "BMW",
     "title": "Car Interior Control System Prototype",
     "duration": { "from": "2016", "to": "2017" },
     "description": "Exploratory development of an Android app to control interior functionality to simplify usage and improve user satisfaction.",
-    "technologies": ["Android", "Java", "Reverse Engineering"],
-    "link": ""
+    "technologies": ["Android", "Java", "Reverse Engineering"]
   },
   {
     "company": "KundoXT",
     "title": "Smart Home Control",
     "duration": { "from": "2016", "to": "" },
     "description": "Web-based app to interact with a smart home system.",
-    "technologies": ["Angular", "JavaScript", "Apache Cordova"],
-    "link": ""
+    "technologies": ["Angular", "JavaScript", "Apache Cordova"]
   },
   {
     "company": "Audi",
@@ -91,6 +98,9 @@
     "duration": { "from": "2015", "to": "" },
     "description": "Researched and implemented an in-car VR experience using live vehicle data. Tested user acceptance of the concept.",
     "technologies": ["Unity", "C#", "ADTF", "C++"],
-    "link": "https://www.techradar.com/news/say-hello-to-holoride-audis-revolutionary-in-car-vr-platform"
+    "artifact": {
+      "name": "Press article",
+      "link": "https://www.techradar.com/news/say-hello-to-holoride-audis-revolutionary-in-car-vr-platform"
+    }
   }
 ]
