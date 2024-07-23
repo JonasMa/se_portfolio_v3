@@ -36,8 +36,8 @@ const CV = () => (
       </div>
     </section>
 
-    <h3 className="font-sans text-yellow mb-5 mt-16 text-base">About</h3>
     <section id="about">
+      <h3 className="font-sans text-yellow mb-5 mt-16 text-base">About</h3>
       My journey in computer science began somewhat by chance, but quickly let
       me to find my passion for user-centered web development. Over the past
       five years I specialized in crafting beautiful, functional, and accessible
@@ -45,14 +45,14 @@ const CV = () => (
       entire stack with Angular and React being my go-to technologies to create
       digital experiences that delight users.
     </section>
-    <h3 className="font-sans text-yellow mb-5 mt-16 text-base">Experience</h3>
     <section id="jobs">
+      <h3 className="font-sans text-yellow mb-5 mt-16 text-base">Experience</h3>
       <Suspense fallback={<Loader />}>
         <Jobs />
       </Suspense>
     </section>
-    <h3 className="font-sans text-yellow mb-5 mt-16 text-base">Projects</h3>
     <section id="projects">
+      <h3 className="font-sans text-yellow mb-5 mt-16 text-base">Projects</h3>
       <Suspense fallback={<Loader />}>
         <Projects />
       </Suspense>
