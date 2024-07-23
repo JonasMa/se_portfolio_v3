@@ -14,7 +14,7 @@ export default function Projects() {
             key={`${index}-0`}
             className="whitespace-nowrap flex justify-between md:block"
           >
-            <h4 className="font-sans font-bold">{company}</h4>
+            <span className="font-sans font-bold">{company}</span>
             <p className="text-blue-light">
               {duration.from}
               {duration.to && " - " + duration.to}
