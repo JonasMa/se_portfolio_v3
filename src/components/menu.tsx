@@ -17,7 +17,7 @@ const Item: React.FC<{
       className={`flex items-center cursor-pointer hover:text-yellow ${
         isSelected ? "text-yellow" : "text-blue-light"
       }`}
-      aria-selected={isSelected}
+      aria-current={isSelected}
     >
       <span
         className={`border-t mr-4 transition-all ${
