@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 const config: Config = {
   content: [
@@ -30,8 +31,8 @@ const config: Config = {
       'yellow-light': '#FFB7031A',
     },
     fontFamily: {
-      sans: ['Inter', 'sans-serif'],
-      mono: ['Mono', 'serif'],
+      sans: ['var(--font-inter)', ...fontFamily.sans],
+      mono: ['var(--font-jetbrains-mono)', ...fontFamily.mono],
     },
   },
   plugins: [],
