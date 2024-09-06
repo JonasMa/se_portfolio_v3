@@ -1,5 +1,11 @@
 [
   {
+    "company": "Freelance",
+    "duration": { "from": "2024", "to": "" },
+    "description": "Created pixel-perfect, responsive websites with the latest technology. Strong focus on usability and performance, as well as accessibility.",
+    "technologies": ["React", "Angular", "NextJS", "Tailwind"]
+  },
+  {
     "company": "Google",
     "duration": { "from": "2022", "to": "2023" },
     "description": "Optimized code review process for Google software engineers by analyzing utilization patterns and identifying opportunities to optimize usage, resulting in increased efficiency productivity and user satisfaction.",

@@ -1,5 +1,19 @@
 [
   {
+    "company": "Freelance",
+    "title": "Food Board",
+    "duration": { "from": "2024", "to": "" },
+    "description": "Implemented pixel perfect components. Ensured compatibility with all screen sizes through responsive design.",
+    "technologies": ["React", "NextJS", "TypeScript"]
+  },
+  {
+    "company": "Freelance",
+    "title": "Daily Dashboard",
+    "duration": { "from": "2024", "to": "" },
+    "description": "Developing a dashboard which connects multiple APIs to provide a nice overview of the day. Utilized caching for faster response times esp. for expensive calls. Migrated to zoneless Angular 18 with signals to improve performance.",
+    "technologies": ["Angular", "NestJS", "TypeScript", "Mongoose", "RxJs", "Zoneless", "Signals"]
+  },
+  {
     "company": "Google",
     "title": "Streamlining Code Review",
     "duration": { "from": "2022", "to": "2023" },
