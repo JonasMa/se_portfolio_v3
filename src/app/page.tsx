@@ -15,8 +15,7 @@ const IndexPage: React.FC = () => {
         <header>
           <h1 className="text-6xl font-bold text-yellow">Jonas Mattes</h1>
           <h2 className="mt-3 font-mono text-blue-light">
-            Software Engineer who loves to build accessible and intuitive web
-            experiences.
+            Freelance Web Engineer
           </h2>
         </header>
         <Menu />
