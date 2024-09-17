@@ -4,16 +4,24 @@ import React from "react";
 import CV from "../components/cv";
 import Menu from "../components/menu";
 import SocialMediaIcons from "../components/social";
+import ProfilePic from "@/components/profile-pic";
 
 const IndexPage: React.FC = () => {
   return (
     <div className="lg:flex gap-8 px-4 mb-16 lg:mb-0 container mx-auto min-h-screen">
-      <a className="absolute left-0 -translate-y-full focus:translate-y-0 text-white p-1" href="#main">
+      <a
+        className="absolute left-0 -translate-y-full focus:translate-y-0 text-white p-1"
+        href="#main"
+      >
         Skip to content
       </a>
       <div className="py-20 lg:pt-32 lg:sticky lg:top-0 lg:self-start lg:w-1/2 lg:min-h-screen flex flex-col gap-4 lg:justify-between">
         <header>
-          <h1 className="text-6xl font-bold text-yellow">Jonas Mattes</h1>
+          <div className="flex flex-col-reverse sm:flex-row sm:items-end sm:gap-5">
+            <h1 className="text-6xl font-bold text-yellow">Jonas Mattes</h1>
+            <ProfilePic className="rounded-full hidden sm:block" />
+            <ProfilePic className="sm:hidden" cropped />
+          </div>
           <h2 className="mt-3 font-mono text-blue-light">
             Freelance Web Engineer
           </h2>
