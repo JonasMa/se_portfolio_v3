@@ -25,7 +25,7 @@ const CV = () => (
       </span>
     </h3>
     <section>
-      I&apos;m a software engineer with five years of experience. I like
+      I&apos;m a software engineer with five years of experience at companies like Google. I like
       building fast, reliable and accessible web experiences over the full
       stack. Also I love a good challenge. If you got one - hit me up!
       <div className="flex gap-4">
