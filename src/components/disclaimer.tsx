@@ -6,7 +6,7 @@ const Disclaimer: React.FC = () => {
       This website is 100% self built in <strong>React</strong> with{" "}
       <strong>NextJS</strong> and <strong>Tailwind CSS</strong>.{" "}
       <a
-        href="https://github.com/JonasMa/se-portfolio-v2"
+        href="https://github.com/JonasMa/se_portfolio_v3"
         target="_blank"
         rel="noreferrer"
         className="underline"
@@ -15,13 +15,13 @@ const Disclaimer: React.FC = () => {
       </a>{" "}
       if you&apos;re interested.
       <br />
-      The website design and functionality is heavily inspired by{" "}
+      The website design and functionality is inspired by{" "}
       <a
-        href="https://brittanychiang.com/"
+        href="https://www.hover.dev/templates/steam"
         target="blank"
         className="underline"
       >
-        Brittany Chiang
+        Hover Steam Dev
       </a>
       .
     </>

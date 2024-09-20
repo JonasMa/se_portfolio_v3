@@ -1,9 +1,40 @@
-import * as React from 'react';
+import * as React from "react";
+import { motion, Variants } from "framer-motion";
+
+const variants: Variants = {
+  initial: {
+    scaleY: 0.5,
+    opacity: 0,
+  },
+  animate: {
+    scaleY: 1,
+    opacity: 1,
+    transition: {
+      repeat: Infinity,
+      repeatType: "mirror",
+      duration: 1,
+      ease: "circIn",
+    },
+  },
+};
 
 const Loader: React.FC = () => {
   return (
-    <div className="flex justify-center items-center content-center w-full h-full">
-      <div className="w-40 h-40 rounded-full border-8 border-yellow-light border-t-blue-light border-solid"></div>
+    <div className="grid place-content-center bg-violet-600 px-4 py-24">
+      <motion.div
+        transition={{
+          staggerChildren: 0.25,
+        }}
+        initial="initial"
+        animate="animate"
+        className="flex gap-1"
+      >
+        <motion.div variants={variants} className="h-12 w-2 bg-white" />
+        <motion.div variants={variants} className="h-12 w-2 bg-white" />
+        <motion.div variants={variants} className="h-12 w-2 bg-white" />
+        <motion.div variants={variants} className="h-12 w-2 bg-white" />
+        <motion.div variants={variants} className="h-12 w-2 bg-white" />
+      </motion.div>
     </div>
   );
 };

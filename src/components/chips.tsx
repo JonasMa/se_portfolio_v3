@@ -9,7 +9,7 @@ const Chips: React.FC<{
       {chips.map((name, index) => (
         <span
           key={index}
-          className="text-yellow bg-yellow-light px-2 py-1 rounded-full break-words"
+          className="text-black border border-yellow px-2 rounded break-words"
         >
           {name}
         </span>

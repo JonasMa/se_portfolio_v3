@@ -9,11 +9,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      gridTemplateColumns: {
-        '2-auto': 'repeat(2, auto)',
-      },
       animation: {
-        'typewriter-6': "typewriter 2s steps(6) forwards",
+        'typewriter-5': "typewriter 2s steps(5) forwards",
       }, 
       keyframes: {
         typewriter: {
@@ -27,8 +24,11 @@ const config: Config = {
       'blue-dark': '#023047',
       'blue-light': '#8ECAE6',
       white: '#FFF',
-      yellow: '#FFB703',
-      'yellow-light': '#FFB7031A',
+      black: '#000',
+      grey: '#767676',
+      'grey-light': '#bbb',
+      yellow: '#fbe284',
+      'yellow-light': '#f9f6e5',
     },
     fontFamily: {
       sans: ['var(--font-inter)', ...fontFamily.sans],

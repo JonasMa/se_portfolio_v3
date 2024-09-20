@@ -4,7 +4,7 @@ import LinkedInIcon from './icons/linkedin';
 
 const Social: React.FC = () => {
   return (
-    <ul className="flex gap-4">
+    <ul className="flex gap-4 items-center">
       <li>
         <GithubIcon />
       </li>
