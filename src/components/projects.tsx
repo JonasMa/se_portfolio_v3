@@ -5,8 +5,26 @@ import projects from "../content/projects/projects.json";
 import { motion, AnimatePresence } from "framer-motion";
 import Chips from "./chips";
 import Link from "next/link";
+import Image, { StaticImageData } from "next/image";
+import visanaImage from "/public/projects/visana.png";
+import ticketImage from "/public/projects/ticket.png";
+import foodImage from "/public/projects/food.png";
+import quizImage from "/public/projects/quiz.jpg";
+import trackingImage from "/public/projects/tracking.png";
+import vrImage from "/public/projects/vr.jpg";
+import homeImage from "/public/projects/home.jpg";
 
 type Project = (typeof projects)[number];
+
+const images: Record<string, StaticImageData> = {
+  visana: visanaImage,
+  ticket: ticketImage,
+  food: foodImage,
+  quiz: quizImage,
+  tracking: trackingImage,
+  vr: vrImage,
+  home: homeImage,
+};
 
 // TODO: Do _selected projects_ and _all projects_
 export default function Projects() {
@@ -19,36 +37,31 @@ export default function Projects() {
         project={selectedProject}
         onClose={() => setSelectedIndex(undefined)}
       />
-      {projects.map(
-        (
-          { company, title, duration, description, technologies, artifact },
-          index
-        ) => (
-          <div>
-            <motion.div
-              whileHover={{ scale: 0.95, rotate: "-1deg" }}
-              className={
-                "bg-yellow-light col-span-12 md:col-span-4 group relative min-h-[300px] cursor-pointer overflow-hidden rounded-2xl bg-slate-100 p-8"
-              }
-              key={index}
-              onClick={() => setSelectedIndex(index)}
-            >
-              <div className="absolute bg-white bottom-0 left-4 right-4 top-8 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-                {/* Picture here */}
-              </div>
-            </motion.div>
-            <h2 className="text-xs font-normal text-black mt-4">{company}</h2>
-            <h3 className="text-lg font-sans font-bold text-black">
-              {title}
-            </h3>
-            <div className="flex gap-2 text-grey">
-              {technologies.map((tech) => (
-                <span>{tech}</span>
-              ))}
+      {projects.map(({ company, title, technologies, id }, index) => (
+        <div>
+          <motion.div
+            whileHover={{ scale: 0.95, rotate: "-1deg" }}
+            className={
+              "border border-yellow col-span-12 md:col-span-4 group relative min-h-[300px] cursor-pointer overflow-hidden rounded-lg bg-slate-100 p-8"
+            }
+            key={index}
+            onClick={() => setSelectedIndex(index)}
+          >
+            <div className="absolute bg-white overflow-hidden bottom-0 left-4 right-4 top-0 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+              {images[id] && (
+                <Image src={images[id]} alt="" placeholder="blur" />
+              )}
             </div>
+          </motion.div>
+          <h2 className="text-xs font-normal text-black mt-4">{company}</h2>
+          <h3 className="text-lg font-sans font-bold text-black">{title}</h3>
+          <div className="flex gap-2 text-grey">
+            {technologies.map((tech) => (
+              <span>{tech}</span>
+            ))}
           </div>
-        )
-      )}
+        </div>
+      ))}
     </div>
   );
 }
@@ -75,9 +88,14 @@ const SpringModal = ({
             animate={{ scale: 1, rotate: "0deg" }}
             exit={{ scale: 0, rotate: "0deg" }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-white p-6 rounded-lg w-full max-w-lg shadow-xl cursor-default relative overflow-hidden"
+            className="bg-white rounded-lg w-full max-w-lg shadow-xl cursor-default relative overflow-hidden"
           >
-            <div className="relative z-10">
+            {images[project.id] && (
+              <div className="flex items-center h-[300px] overflow-hidden">
+                <Image src={images[project.id]} alt="" placeholder="blur" />
+              </div>
+            )}
+            <div className="relative z-10 p-6 lg:p-10">
               <h1 className="font-sans text-xl font-bold">{project.title}</h1>
               <h2>{project.company}</h2>
               <div className="mt-1">

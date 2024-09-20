@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import me from '../../public/me.png'
-import mePeek from '../../public/me_peek.png'
+import me from '/public/me.png'
+import mePeek from '/public/me_peek.png'
 
 export default function ProfilePic({className, cropped = false}: {className?: string, cropped?: boolean}) {
     if(cropped){
