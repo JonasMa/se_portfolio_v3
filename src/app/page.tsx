@@ -23,10 +23,12 @@ const IndexPage: React.FC = () => {
               <span>Hi,</span>
               <span className="whitespace-nowrap flex gap-2 sm:gap-4 lg:gap-5">
                 <span>I&apos;m</span>
-                <span className="relative w-[max-content] before:absolute before:inset-0 before:bg-black before:animate-typewriter-5">
-                  Jonas
+                <div>
+                  <span className="relative w-[max-content] before:absolute before:inset-0 before:bg-black before:animate-typewriter-5">
+                    Jonas
+                  </span>
                   <span className="text-yellow">.</span>
-                </span>
+                </div>
               </span>
             </h1>
             <ProfilePic className="rounded-full hidden sm:block" />
@@ -55,7 +57,7 @@ const IndexPage: React.FC = () => {
       </div>
       <main
         id="main"
-        className="lg:pb-20 sm:mt-20 font-mono text-sm text-white overflow-y-auto flex-shrink-0"
+        className="lg:pb-20 sm:mt-20 font-mono text-white overflow-y-auto flex-shrink-0"
       >
         <CV />
       </main>

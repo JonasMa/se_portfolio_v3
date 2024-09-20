@@ -17,12 +17,12 @@ const technologies = [
 ];
 
 const Header = ({ children }: { children?: ReactNode }) => (
-  <div className="flex gap-8 items-center mb-8 mt-28">
-    <h3 className="font-sans text-black text-4xl font-bold">
+  <div className="flex flex-col gap-4 lg:gap-8 items-center lg:items-start mb-8 md:mb-16 mt-28">
+    <h3 className="font-sans text-black text-4xl lg:text-6xl font-bold">
       {children}
       <span className="text-yellow">.</span>
     </h3>
-    <div className="h-[1px] bg-grey-light flex-grow"></div>
+    <div className="h-1 lg:h-2 bg-black w-full"></div>
   </div>
 );
 
