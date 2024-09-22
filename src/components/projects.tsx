@@ -31,8 +31,7 @@ const featuredIds = [
 const featuredProjects = featuredIds
   .map((featuredId) => projects.find(({ id }) => id === featuredId))
   .filter(notEmpty);
-const moreProjects = projects
-  .filter(({ id }) => !featuredIds.includes(id));
+const moreProjects = projects.filter(({ id }) => !featuredIds.includes(id));
 
 const allProjects = [...featuredProjects, ...moreProjects];
 
@@ -65,33 +64,31 @@ export default function Projects() {
         project={selectedProject}
         onClose={() => setSelectedIndex(undefined)}
       />
-      {projectsToDisplay.map(
-        ({ company, title, technologies, id }, index) => (
-          <div key={id}>
-            <motion.div
-              whileHover={{ scale: 0.95, rotate: "-1deg" }}
-              className={
-                "border border-yellow col-span-12 md:col-span-4 group relative min-h-[300px] cursor-pointer overflow-hidden rounded-lg bg-slate-100 p-8"
-              }
-              key={index}
-              onClick={() => setSelectedIndex(index)}
-            >
-              <div className="absolute bg-white overflow-hidden bottom-0 left-4 right-4 top-0 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-                {images[id] && (
-                  <Image src={images[id]} alt="" placeholder="blur" />
-                )}
-              </div>
-            </motion.div>
-            <h2 className="text-xs font-normal text-black mt-4">{company}</h2>
-            <h3 className="text-lg font-sans font-bold text-black">{title}</h3>
-            <div className="flex gap-2 text-grey flex-wrap">
-              {technologies.map((tech) => (
-                <span className="whitespace-nowrap">{tech}</span>
-              ))}
+      {projectsToDisplay.map(({ company, title, technologies, id }, index) => (
+        <div key={id}>
+          <motion.div
+            whileHover={{ scale: 0.95, rotate: "-1deg" }}
+            className={
+              "border border-yellow col-span-12 md:col-span-4 group relative min-h-[300px] cursor-pointer overflow-hidden rounded-lg bg-slate-100 p-8"
+            }
+            key={index}
+            onClick={() => setSelectedIndex(index)}
+          >
+            <div className="absolute bg-white overflow-hidden bottom-0 left-4 right-4 top-0 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+              {images[id] && (
+                <Image src={images[id]} alt="" placeholder="blur" />
+              )}
             </div>
+          </motion.div>
+          <h2 className="text-xs font-normal text-black mt-4">{company}</h2>
+          <h3 className="text-lg font-sans font-bold text-black">{title}</h3>
+          <div className="flex gap-2 text-grey flex-wrap">
+            {technologies.map((tech) => (
+              <span className="whitespace-nowrap">{tech}</span>
+            ))}
           </div>
-        )
-      )}
+        </div>
+      ))}
       {!doLoadMore && (
         <Button
           color="yellow"
@@ -105,7 +102,6 @@ export default function Projects() {
   );
 }
 
-// TODO: Add X to close
 const SpringModal = ({
   project,
   onClose,
@@ -123,6 +119,12 @@ const SpringModal = ({
           onClick={() => onClose()}
           className="text-black bg-slate-900/20 backdrop-blur p-8 fixed inset-0 z-50 grid place-items-center overflow-y-scroll cursor-pointer"
         >
+          <button
+            className="absolute top-2 right-2 bg-grey-light bg-opacity-50 px-4 py-2 m-2 font-mono rounded-full"
+            onClick={() => onClose()}
+          >
+            x
+          </button>
           <motion.div
             initial={{ scale: 0, rotate: "12.5deg" }}
             animate={{ scale: 1, rotate: "0deg" }}
