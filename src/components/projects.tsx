@@ -50,13 +50,12 @@ const images: Record<string, StaticImageData> = {
   handyman: genericImage,
 };
 
-// TODO: Do _selected projects_ and _all projects_
 export default function Projects() {
   const [selectedIndex, setSelectedIndex] = useState<number | undefined>();
   const [doLoadMore, setDoLoadMore] = useState(false);
-  const selectedProject =
-    selectedIndex !== undefined ? projects[selectedIndex] : undefined;
   const projectsToDisplay = doLoadMore ? allProjects : featuredProjects;
+  const selectedProject =
+    selectedIndex !== undefined ? projectsToDisplay[selectedIndex] : undefined;
 
   return (
     <div className="flex flex-col md:grid md:grid-cols-2 gap-x-10 gap-y-14">
