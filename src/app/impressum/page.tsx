@@ -1,12 +1,12 @@
-import Link from 'next/link';
-import React from 'react';
+import Link from "next/link";
+import React from "react";
 
 const Impressum: React.FC = () => (
-  <div className="container font-mono text-white mx-auto py-12">
-    <Link href="/" className="block text-xl text-yellow mb-4">
-      &lt;
+  <div className="container font-mono text-black mx-auto py-12">
+    <Link href="/" className="block text-xl mb-16">
+      &lt; BACK
     </Link>
-    <h2 className="font-bold text-xl text-yellow">Impressum</h2>
+    <h1 className="font-bold text-xl">Impressum</h1>
     <br />
     <p>
       Jonas Mattes
@@ -39,17 +39,18 @@ const Impressum: React.FC = () => (
     <br />
     § 2 Externe Links
     <br />
-    Diese Website enthält Verknüpfungen zu Websites Dritter (&quot;externe Links&quot;).
-    Diese Websites unterliegen der Haftung der jeweiligen Betreiber. Der
-    Anbieter hat bei der erstmaligen Verknüpfung der externen Links die fremden
-    Inhalte daraufhin überprüft, ob etwaige Rechtsverstöße bestehen. Zu dem
-    Zeitpunkt waren keine Rechtsverstöße ersichtlich. Der Anbieter hat keinerlei
-    Einfluss auf die aktuelle und zukünftige Gestaltung und auf die Inhalte der
-    verknüpften Seiten. Das Setzen von externen Links bedeutet nicht, dass sich
-    der Anbieter die hinter dem Verweis oder Link liegenden Inhalte zu Eigen
-    macht. Eine ständige Kontrolle der externen Links ist für den Anbieter ohne
-    konkrete Hinweise auf Rechtsverstöße nicht zumutbar. Bei Kenntnis von
-    Rechtsverstößen werden jedoch derartige externe Links unverzüglich gelöscht.
+    Diese Website enthält Verknüpfungen zu Websites Dritter (&quot;externe
+    Links&quot;). Diese Websites unterliegen der Haftung der jeweiligen
+    Betreiber. Der Anbieter hat bei der erstmaligen Verknüpfung der externen
+    Links die fremden Inhalte daraufhin überprüft, ob etwaige Rechtsverstöße
+    bestehen. Zu dem Zeitpunkt waren keine Rechtsverstöße ersichtlich. Der
+    Anbieter hat keinerlei Einfluss auf die aktuelle und zukünftige Gestaltung
+    und auf die Inhalte der verknüpften Seiten. Das Setzen von externen Links
+    bedeutet nicht, dass sich der Anbieter die hinter dem Verweis oder Link
+    liegenden Inhalte zu Eigen macht. Eine ständige Kontrolle der externen Links
+    ist für den Anbieter ohne konkrete Hinweise auf Rechtsverstöße nicht
+    zumutbar. Bei Kenntnis von Rechtsverstößen werden jedoch derartige externe
+    Links unverzüglich gelöscht.
     <br />
     <br />
     § 3 Urheber- und Leistungsschutzrechte
@@ -78,8 +79,11 @@ const Impressum: React.FC = () => (
     ausdrücklich darauf hingewiesen. In diesem Falle gelten im jeweiligen
     Einzelfall die besonderen Nutzungsbedingungen.
     <p>
-      Quelle:{' '}
-      <a href="https://www.fachanwalt.de/impressum-generator/">
+      Quelle:{" "}
+      <a
+        href="https://www.fachanwalt.de/impressum-generator/"
+        className="underline"
+      >
         Link hier klicken
       </a>
     </p>
