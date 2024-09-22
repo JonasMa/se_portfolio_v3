@@ -83,7 +83,7 @@ export default function Projects() {
           <h3 className="text-lg font-sans font-bold text-black">{title}</h3>
           <div className="flex gap-2 text-grey flex-wrap">
             {technologies.map((tech) => (
-              <span className="whitespace-nowrap">{tech}</span>
+              <span key={tech} className="whitespace-nowrap">{tech}</span>
             ))}
           </div>
         </div>
