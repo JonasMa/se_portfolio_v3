@@ -8,7 +8,7 @@ export default function Jobs() {
       {jobs.map(({ company, duration, description, technologies }, index) => (
         <div key={index} className="border-b border-grey-light pb-6">
           <div className="whitespace-nowrap flex justify-between">
-            <h4 className="font-sans font-bold text-xl">{company}</h4>
+            <h3 className="font-sans font-bold text-xl">{company}</h3>
             <p className="font-sans">
               {duration.from}
               {duration.to && " - " + duration.to}

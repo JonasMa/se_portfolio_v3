@@ -34,9 +34,9 @@ const IndexPage: React.FC = () => {
             <ProfilePic className="rounded-full hidden sm:block" />
             <ProfilePic className="sm:hidden" cropped />
           </div>
-          <h2 className="text-2xl sm:text-3xl">
+          <div className="text-2xl sm:text-3xl">
             I&apos;m a <span className="bg-yellow">Freelance Web Engineer</span>
-          </h2>
+          </div>
           <div className="font-sans mt-4 sm:w-2/3">
             I&apos;m a software engineer with five years of experience at
             companies like Google. I like building fast, reliable and accessible

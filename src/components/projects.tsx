@@ -79,7 +79,7 @@ export default function Projects() {
               )}
             </div>
           </motion.div>
-          <h2 className="text-xs font-normal text-black mt-4">{company}</h2>
+          <div className="text-xs font-normal text-black mt-4">{company}</div>
           <h3 className="text-lg font-sans font-bold text-black">{title}</h3>
           <div className="flex gap-2 text-grey flex-wrap">
             {technologies.map((tech) => (
