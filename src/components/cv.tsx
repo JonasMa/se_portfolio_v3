@@ -75,7 +75,7 @@ const CV = () => (
           <Chips chips={technologies} />
           <details>
             <summary className="font-bold font-sans mb-4">
-              Surrounding technologies
+              More, related technologies
             </summary>
             <Chips chips={moreTechnologies} />
           </details>
