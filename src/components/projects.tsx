@@ -13,6 +13,9 @@ import quizImage from "/public/projects/quiz.jpg";
 import trackingImage from "/public/projects/tracking.png";
 import vrImage from "/public/projects/vr.jpg";
 import homeImage from "/public/projects/home.jpg";
+import critiqueImage from "/public/projects/critique.png";
+import ciderImage from "/public/projects/cider.png";
+import genericImage from "/public/projects/generic.jpg";
 
 type Project = (typeof projects)[number];
 
@@ -24,6 +27,11 @@ const images: Record<string, StaticImageData> = {
   tracking: trackingImage,
   vr: vrImage,
   home: homeImage,
+  critique: critiqueImage,
+  cider: ciderImage,
+  dashboard: genericImage,
+  ar: genericImage,
+  handyman: genericImage,
 };
 
 // TODO: Do _selected projects_ and _all projects_
@@ -55,9 +63,9 @@ export default function Projects() {
           </motion.div>
           <h2 className="text-xs font-normal text-black mt-4">{company}</h2>
           <h3 className="text-lg font-sans font-bold text-black">{title}</h3>
-          <div className="flex gap-2 text-grey">
+          <div className="flex gap-2 text-grey flex-wrap">
             {technologies.map((tech) => (
-              <span>{tech}</span>
+              <span className="whitespace-nowrap">{tech}</span>
             ))}
           </div>
         </div>

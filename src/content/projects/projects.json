@@ -4,7 +4,7 @@
     "company": "Freelance",
     "title": "Food Board",
     "duration": { "from": "2024", "to": "" },
-    "description": "Implemented pixel perfect components. Ensured compatibility with all screen sizes through responsive design.",
+    "description": "Based on Figma designs I Implemented the needed components pixel perfect. I focused on making the components fast and robust. Architecture decisions focused on readability and reusability. As responsiveness was important, I focused on a smooth transition throughout all screen sizes. Where designs for mobile were missing, I created them myself in coordination with the customer.",
     "technologies": ["React", "NextJS", "TypeScript"]
   },
   {
@@ -20,7 +20,7 @@
     "company": "Google",
     "title": "Streamlining Code Review",
     "duration": { "from": "2022", "to": "2023" },
-    "description": "Worked on Googles internal code review platform, always trying to optimize for user satisfaction and efficiency. Planned and reviewed features based on usage statistics. Oversaw deployment and supported users. ",
+    "description": "I worked on Googles internal code review platform, always trying to optimize for user satisfaction and efficiency. I planned and reviewed features based on usage statistics, always trying to improve efficiency and satisfaction of over 80k users. All features were rolled out gradually while monitoring performance and user satisfaction. The impact of the features came down to time savings of over 25 full-time employees.",
     "technologies": ["Angular", "TypeScript", "NgRx", "RxJs"]
   },
   {
@@ -28,7 +28,7 @@
     "company": "Google",
     "title": "Code Review IDE Integration",
     "duration": { "from": "2022", "to": "2023" },
-    "description": "Integrating code review artifacts into the VSCode based IDE to make it easier and faster to work on code feedback.",
+    "description": "For the internal Google IDE (VSCode based) I worked on integrating code review artifacts into it. This makes it easier for users to work on comments they got on their code. Each feature was carefully planned in coordinance with UX research and rolled out to gradually. All while monitoring performance and satisfaction of over 80k users.",
     "technologies": ["TypeScript", "VSCode API", "RxJs"]
   },
   {
@@ -36,14 +36,15 @@
     "company": "Visana",
     "title": "Insurance Calculator",
     "duration": { "from": "2021", "to": "2022" },
-    "description": "Developed an online insurance calculator where users can browse and select their individual health insurance.",
+    "description": "I developed an online insurance calculator where users can browse and select their individual health insurance. It's basically a big fancy form, so validation of inputs played a crucial role. Naturally I took part in planning and execution of features in a Scrum based team.",
     "technologies": [
       "Angular",
       "TypeScript",
       "NgRx",
       "Cypress",
       "Karma",
-      "Java"
+      "Java",
+      "Spring Boot"
     ],
     "artifact": {
       "name": "Insurance Calculator",
@@ -55,14 +56,16 @@
     "company": "SBB",
     "title": "Modernize the Ticket Vending Machine",
     "duration": { "from": "2020", "to": "2021" },
-    "description": "Technological redevelopment of the ticket vending machine to match the app UI, providing outstanding accessibility and uptime.",
+    "description": "Technological redevelopment of the ticket vending machine we imple to match the app UI. Because this machine will run 24/7 it's crucial to provide outstanding accessibility and uptime by preventing any memory leaks and outstanding testing. Tasks reached from implmementing communication with other parts of the maching to introducing a state machine in the payment process.",
     "technologies": [
       "TypeScript",
       "Stencil",
       "Jest",
       "Cypress",
       "Webpack",
-      "Java"
+      "Java",
+      "Spring Boot",
+      "Xstate"
     ],
     "artifact": {
       "name": "Press article",
@@ -74,8 +77,8 @@
     "company": "SBB",
     "title": "Custom Tracking Library",
     "duration": { "from": "2020", "to": "2021" },
-    "description": "Developed cross-browser compatible library to track user behavour and displayed contents.",
-    "technologies": ["JavaScript", "Karma", "Babel", "Webpack", "BrowserStack"],
+    "description": "To be GDPR compliant and not reliant on Googles tracking we developed cross-browser compatible library to track user behaviour and displayed contents. This package grew to be a neccessary dependency on the SBB webite, so a very broad compatibility of browsers and versions was crucial. We ensured this by utilizing test driven development and testing our code in browsers on all platforms using BrowserStack.",
+    "technologies": ["JavaScript", "Karma", "Babel", "Webpack", "BrowserStack", "TDD"],
     "artifact": {
       "name": "NPM package",
       "link": "https://www.npmjs.com/package/@swissfederalrailways/internet-tracking"
@@ -86,7 +89,7 @@
     "company": "Zühlke",
     "title": "Mobile Security Training Quiz",
     "duration": { "from": "2019", "to": "2020" },
-    "description": "Mobile-first, card-based quiz which let's users playfully learn about security topics.",
+    "description": "Mobile-first, card-based quiz which let's users playfully learn about security topics. I oversaw team progress and helped planning features. Also I coordinated communications and discussion with the UI team.",
     "technologies": ["React", "JavaScript", "Redux", "Jest"],
     "artifact": {
       "name": "Microsoft Appsource",
@@ -94,11 +97,11 @@
     }
   },
   {
-    "id": "AR",
+    "id": "ar",
     "company": "MaibornWolff",
     "title": "Technological Research in AR & VR",
     "duration": { "from": "2017", "to": "2018" },
-    "description": "AR prototype to overlook and maintain conveyor belts in a factory. Analyzing its performance with a user-study.",
+    "description": "AR prototype to overlook and maintain conveyor belts in a factory. Fot this a digital overlay was created, signaling the status of each component. This would enable a maintenance worker an immediate overview of the state of the facility. The anslysis of its performance with a user-study showed that response time and confidence of the users increased significantly.",
     "technologies": ["Unity", "C#", "HoloLens"]
   },
   {
@@ -106,7 +109,7 @@
     "company": "BMW",
     "title": "Car Interior Control System Prototype",
     "duration": { "from": "2016", "to": "2017" },
-    "description": "Exploratory development of an Android app to control interior functionality to simplify usage and improve user satisfaction.",
+    "description": "Exploratory development of an Android app to control interior functionality. For this I reverse engineered an existing control app and bundeled its functionality to increase helpfulness and satisfaction.",
     "technologies": ["Android", "Java", "Reverse Engineering"]
   },
   {
@@ -114,7 +117,7 @@
     "company": "KundoXT",
     "title": "Smart Home Control",
     "duration": { "from": "2016", "to": "" },
-    "description": "Web-based app to interact with a smart home system.",
+    "description": "I lead the technical development of a web-based smart home app.",
     "technologies": ["Angular", "JavaScript", "Apache Cordova"]
   },
   {
@@ -122,7 +125,7 @@
     "company": "Audi",
     "title": "In-Car VR Experience Prototype",
     "duration": { "from": "2015", "to": "" },
-    "description": "Researched and implemented an in-car VR experience using live vehicle data. Tested user acceptance of the concept.",
+    "description": "Researched and implemented an in-car VR experience using live vehicle data. In this exploratory prototype it was necessary to work on a wide variety of tasks, including gathering test data or setting up a test environment to test features outside of the car. Piping the live-data into the program was done via transformations in C++, the actual program ran on C#. In-car VR is prone to nausea and virtigo, so I tested user acceptance of the concept with a focus on that.",
     "technologies": ["Unity", "C#", "ADTF", "C++"],
     "artifact": {
       "name": "Press article",
