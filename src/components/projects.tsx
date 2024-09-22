@@ -68,12 +68,12 @@ export default function Projects() {
           <motion.div
             whileHover={{ scale: 0.95, rotate: "-1deg" }}
             className={
-              "border border-yellow col-span-12 md:col-span-4 group relative min-h-[300px] cursor-pointer overflow-hidden rounded-lg bg-slate-100 p-8"
+              "border border-yellow col-span-12 md:col-span-4 group relative min-h-52 sm:min-h-[300px] cursor-pointer overflow-hidden rounded-lg bg-slate-100 p-8"
             }
             key={index}
             onClick={() => setSelectedIndex(index)}
           >
-            <div className="absolute bg-white overflow-hidden bottom-0 left-4 right-4 top-0 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+            <div className="absolute bg-white overflow-hidden bottom-0 left-4 right-4 top-0 translate-y-8 rounded-t-2xl bg-gradient-to-br transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
               {images[id] && (
                 <Image src={images[id]} alt="" placeholder="blur" />
               )}
