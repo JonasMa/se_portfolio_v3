@@ -16,8 +16,25 @@ import homeImage from "/public/projects/home.jpg";
 import critiqueImage from "/public/projects/critique.png";
 import ciderImage from "/public/projects/cider.png";
 import genericImage from "/public/projects/generic.jpg";
+import Button from "./button";
 
 type Project = (typeof projects)[number];
+const featuredIds = [
+  "critique",
+  "ticket",
+  "visana",
+  "cider",
+  "tracking",
+  "quiz",
+];
+
+const featuredProjects = featuredIds
+  .map((featuredId) => projects.find(({ id }) => id === featuredId))
+  .filter(notEmpty);
+const moreProjects = projects
+  .filter(({ id }) => !featuredIds.includes(id));
+
+const allProjects = [...featuredProjects, ...moreProjects];
 
 const images: Record<string, StaticImageData> = {
   visana: visanaImage,
@@ -37,43 +54,58 @@ const images: Record<string, StaticImageData> = {
 // TODO: Do _selected projects_ and _all projects_
 export default function Projects() {
   const [selectedIndex, setSelectedIndex] = useState<number | undefined>();
+  const [doLoadMore, setDoLoadMore] = useState(false);
   const selectedProject =
     selectedIndex !== undefined ? projects[selectedIndex] : undefined;
+  const projectsToDisplay = doLoadMore ? allProjects : featuredProjects;
+
   return (
     <div className="flex flex-col md:grid md:grid-cols-2 gap-x-10 gap-y-14">
       <SpringModal
         project={selectedProject}
         onClose={() => setSelectedIndex(undefined)}
       />
-      {projects.map(({ company, title, technologies, id }, index) => (
-        <div>
-          <motion.div
-            whileHover={{ scale: 0.95, rotate: "-1deg" }}
-            className={
-              "border border-yellow col-span-12 md:col-span-4 group relative min-h-[300px] cursor-pointer overflow-hidden rounded-lg bg-slate-100 p-8"
-            }
-            key={index}
-            onClick={() => setSelectedIndex(index)}
-          >
-            <div className="absolute bg-white overflow-hidden bottom-0 left-4 right-4 top-0 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-              {images[id] && (
-                <Image src={images[id]} alt="" placeholder="blur" />
-              )}
+      {projectsToDisplay.map(
+        ({ company, title, technologies, id }, index) => (
+          <div key={id}>
+            <motion.div
+              whileHover={{ scale: 0.95, rotate: "-1deg" }}
+              className={
+                "border border-yellow col-span-12 md:col-span-4 group relative min-h-[300px] cursor-pointer overflow-hidden rounded-lg bg-slate-100 p-8"
+              }
+              key={index}
+              onClick={() => setSelectedIndex(index)}
+            >
+              <div className="absolute bg-white overflow-hidden bottom-0 left-4 right-4 top-0 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+                {images[id] && (
+                  <Image src={images[id]} alt="" placeholder="blur" />
+                )}
+              </div>
+            </motion.div>
+            <h2 className="text-xs font-normal text-black mt-4">{company}</h2>
+            <h3 className="text-lg font-sans font-bold text-black">{title}</h3>
+            <div className="flex gap-2 text-grey flex-wrap">
+              {technologies.map((tech) => (
+                <span className="whitespace-nowrap">{tech}</span>
+              ))}
             </div>
-          </motion.div>
-          <h2 className="text-xs font-normal text-black mt-4">{company}</h2>
-          <h3 className="text-lg font-sans font-bold text-black">{title}</h3>
-          <div className="flex gap-2 text-grey flex-wrap">
-            {technologies.map((tech) => (
-              <span className="whitespace-nowrap">{tech}</span>
-            ))}
           </div>
-        </div>
-      ))}
+        )
+      )}
+      {!doLoadMore && (
+        <Button
+          color="yellow"
+          title="Load more projects"
+          onClick={() => setDoLoadMore(true)}
+        >
+          Load more
+        </Button>
+      )}
     </div>
   );
 }
 
+// TODO: Add X to close
 const SpringModal = ({
   project,
   onClose,
@@ -131,3 +163,7 @@ const SpringModal = ({
     </AnimatePresence>
   );
 };
+
+function notEmpty<T>(value: T | null | undefined): value is T {
+  return value !== null && value !== undefined;
+}
