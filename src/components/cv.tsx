@@ -16,6 +16,31 @@ const technologies = [
   "Spring Boot",
 ];
 
+const moreTechnologies = [
+  "RxJs",
+  "NgRx",
+  "HTML",
+  "CSS",
+  "Redux",
+  "Stencil",
+  "Nest",
+  "Webpack",
+  "Rollup",
+  "Jest",
+  "Cypress",
+  "Jenkins",
+  "Openshift",
+  "Lighthouse",
+  "Git",
+  "GitLab",
+  "Jira",
+  "BrowserStack",
+  "Miro",
+  "C#",
+  "Sonar Qube",
+  "Photoshop",
+];
+
 const Header = ({ children }: { children?: ReactNode }) => (
   <div className="flex flex-col gap-4 lg:gap-8 items-center lg:items-start mb-8 md:mb-16 mt-28">
     <h3 className="font-sans text-black text-4xl lg:text-6xl font-bold">
@@ -48,6 +73,14 @@ const CV = () => (
             Technologies I like
           </h4>
           <Chips chips={technologies} />
+          <details>
+            <summary className="font-bold font-sans mb-4">
+              Surrounding technologies
+            </summary>
+            <p>
+              <Chips chips={moreTechnologies} />
+            </p>
+          </details>
         </div>
       </div>
     </section>
