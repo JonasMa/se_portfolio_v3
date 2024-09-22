@@ -9,7 +9,6 @@ export default function ProfilePic({className, cropped = false}: {className?: st
             src={mePeek}
             alt="Picture of Jonas glancing to the right."
             width={100}
-            placeholder="blur"
             className={className}
             />
         )      
@@ -19,7 +18,6 @@ export default function ProfilePic({className, cropped = false}: {className?: st
           src={me}
           alt="Picture of Jonas peeking over the header, glancing at it."
           width={200}
-          placeholder="blur"
           className={className}
         />
       )
