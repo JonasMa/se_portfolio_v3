@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 const Impressum: React.FC = () => (
-  <div className="container font-mono text-black mx-auto py-12">
+  <div className="container font-mono text-black mx-auto py-12 px-4">
     <Link href="/" className="block text-xl mb-16">
       &lt; BACK
     </Link>
@@ -11,9 +11,9 @@ const Impressum: React.FC = () => (
     <p>
       Jonas Mattes
       <br />
-      Hirschgartenallee 37
+      Erhardtstr 15
       <br />
-      80639 München
+      80469 München
     </p>
     <p>
       Telefon: +49 (0) 152 57685800
