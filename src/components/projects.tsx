@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import projects from "../content/projects/projects.json";
 import { motion, AnimatePresence } from "framer-motion";
 import Chips from "./chips";
@@ -50,18 +51,50 @@ const images: Record<string, StaticImageData> = {
   handyman: genericImage,
 };
 
+const PROJECT_QUERY_PARAM = "project";
+
 export default function Projects() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
   const [selectedIndex, setSelectedIndex] = useState<number | undefined>();
   const [doLoadMore, setDoLoadMore] = useState(false);
   const projectsToDisplay = doLoadMore ? allProjects : featuredProjects;
   const selectedProject =
     selectedIndex !== undefined ? projectsToDisplay[selectedIndex] : undefined;
 
+  // Open modal from URL query param (e.g. /?project=visana)
+  useEffect(() => {
+    const projectId = searchParams.get(PROJECT_QUERY_PARAM);
+    if (!projectId) return;
+
+    const index = allProjects.findIndex((p) => p.id === projectId);
+    if (index === -1) return;
+
+    setDoLoadMore(true); // Ensure all projects are loaded
+    setSelectedIndex(index);
+  }, [searchParams]);
+
+  const openModal = (index: number) => {
+    setSelectedIndex(index);
+    const project = allProjects[index];
+    const params = new URLSearchParams(searchParams.toString());
+    params.set(PROJECT_QUERY_PARAM, project.id);
+    router.replace(`?${params.toString()}`, { scroll: false });
+  };
+
+  const closeModal = () => {
+    setSelectedIndex(undefined);
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete(PROJECT_QUERY_PARAM);
+    const newUrl = params.toString() ? `?${params.toString()}` : window.location.pathname;
+    router.replace(newUrl, { scroll: false });
+  };
+
   return (
     <div className="flex flex-col md:grid md:grid-cols-2 gap-x-10 gap-y-14">
       <SpringModal
         project={selectedProject}
-        onClose={() => setSelectedIndex(undefined)}
+        onClose={closeModal}
       />
       {projectsToDisplay.map(({ company, title, technologies, id }, index) => (
         <div key={id}>
@@ -71,7 +104,7 @@ export default function Projects() {
               "border border-yellow col-span-12 md:col-span-4 group relative min-h-52 sm:min-h-[300px] cursor-pointer overflow-hidden rounded-lg bg-slate-100 p-8"
             }
             key={index}
-            onClick={() => setSelectedIndex(index)}
+            onClick={() => openModal(index)}
           >
             <div className="absolute bg-white overflow-hidden bottom-0 left-4 right-4 top-0 translate-y-8 rounded-t-2xl bg-gradient-to-br transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
               {images[id] && (
