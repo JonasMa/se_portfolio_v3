@@ -1,6 +1,22 @@
 [
   {
-    "id": "food",
+    "id": "kipti",
+    "company": "Startup",
+    "title": "AI-enhanced full stack SaaS platform",
+    "duration": { "from": "2025", "to": "2026" },
+    "description": "Architected and built an AI-enhanced full-stack SaaS platform as technical lead. Established infrastructure, including AWS deployment (ECS, RDS), CI/CD pipelines, and automated testing. Adopted AI-first development approach using Claude and GPT-4 for code review, refactoring suggestions, and rapid iteration on complex features.",
+    "technologies": ["React", "NextJS", "TypeScript", "Hono", "AI SDK", "PostgreSQL", "Terraform", "AWS"]
+  },
+  {
+    "id": "sphere",
+    "company": "Aviation industry",
+    "title": "Angular migration",
+    "duration": { "from": "2024", "to": "2025" },
+    "description": "Led Angular migration strategy for .NET WebForms application, architecting a new frontend and driving technical decisions.",
+    "technologies": ["Angular", "TypeScript", "RxJs"]
+  },
+  {
+    "id": "sphere",
     "company": "Freelance",
     "title": "Food Board",
     "duration": { "from": "2024", "to": "" },
@@ -20,7 +36,7 @@
     "company": "Google",
     "title": "Streamlining Code Review",
     "duration": { "from": "2022", "to": "2023" },
-    "description": "I worked on Googles internal code review platform, always trying to optimize for user satisfaction and efficiency. I planned and reviewed features based on usage statistics, always trying to improve efficiency and satisfaction of over 80k users. All features were rolled out gradually while monitoring performance and user satisfaction. The impact of the features came down to time savings of over 25 full-time employees.",
+    "description": "Part of a small, high-impact team maintaining a code review platform for 80,000+ developers, owning critical features that ensured global developer productivity and satisfaction. Led data-driven product improvements by analyzing user behavior patterns, iterating on solutions, and implementing features that measurably improved developer efficiency and satisfaction: improved IDE integration, reduced review friction, and optimized workflows. My work led to 25+ SWE annual productivity savings.",
     "technologies": ["Angular", "TypeScript", "NgRx", "RxJs"]
   },
   {
@@ -56,7 +72,7 @@
     "company": "SBB",
     "title": "Modernize the Ticket Vending Machine",
     "duration": { "from": "2020", "to": "2021" },
-    "description": "Technological redevelopment of the ticket vending machine we imple to match the app UI. Because this machine will run 24/7 it's crucial to provide outstanding accessibility and uptime by preventing any memory leaks and outstanding testing. Tasks reached from implmementing communication with other parts of the maching to introducing a state machine in the payment process.",
+    "description": "Rebuilt, in a team of <10 people, Swiss Federal Railways (SBB) ticket vending machine interface, serving millions of passengers across Switzerland's 1,000+ self-service terminals. Architected and owned state machine logic for critical payment processing, ticket printing, and transaction workflows, ensuring fault-tolerant operation for 24/7 unattended deployment across machines nationwide. Collaborated with disability advocacy organizations throughout the development lifecycle, conducting usability testing with users with visual, motor, and cognitive impairments to ensure legal accessibility compliance and universal usability.",
     "technologies": [
       "TypeScript",
       "Stencil",

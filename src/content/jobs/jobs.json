@@ -2,20 +2,20 @@
   {
     "company": "Freelance",
     "duration": { "from": "2024", "to": "" },
-    "description": "Created pixel-perfect, responsive websites with the latest technology. Strong focus on usability and performance, as well as accessibility.",
-    "technologies": ["React", "Angular", "NextJS", "Tailwind"]
+    "description": "Led Angular modernization for enterprise apps, built an AI-first SaaS platform from scratch, and delivered accessible, production-ready UIs for multiple clients.",
+    "technologies": ["React", "Angular", "NextJS", "Tailwind", "Hono", "AI SDK", "Terraform", "Playwright"]
   },
   {
     "company": "Google",
     "duration": { "from": "2022", "to": "2023" },
-    "description": "Optimized code review process for Google software engineers by analyzing utilization patterns and identifying opportunities to optimize usage, resulting in increased efficiency productivity and user satisfaction.",
+    "description": "Owned critical features on a code review platform for 80k+ developers. Drove data-driven improvements that delivered 25+ SWE annual productivity savings.",
     "technologies": ["TypeScript", "Angular", "VSCode API"]
   },
   {
     "company": "Zühlke",
     "duration": { "from": "2019", "to": "2022" },
-    "description": "Build, style, ship and maintain high-quality, customer-facing websites for various clients. Supported backend integration for improved system cohesion.",
-    "technologies": ["TypeScript", "Angular", "Stencil", "React"]
+    "description": "Rebuilt SBB ticket vending machine UI for 1,000+ terminals. Owned state machine logic for payment and transactions. Worked with disability advocates to ensure accessibility compliance.",
+    "technologies": ["TypeScript", "Angular", "Web Components", "React"]
   },
   {
     "company": "MaibornWolff",

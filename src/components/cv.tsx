@@ -7,38 +7,30 @@ import Chips from "./chips";
 import SocialMediaIcons from "../components/social";
 
 const technologies = [
-  "Angular",
-  "React",
+  "Angular 20+",
+  "React 19+",
   "TypeScript",
   "Tailwind",
   "NextJs",
-  "Java",
-  "Spring Boot",
+  "Claude Code",
 ];
 
 const moreTechnologies = [
   "RxJs",
   "NgRx",
-  "HTML",
-  "CSS",
+  "HTML5",
+  "CSS3",
+  "Hono",
+  "RPC",
+  "REST",
   "Redux",
-  "Stencil",
-  "Nest",
-  "Webpack",
-  "Rollup",
-  "Jest",
-  "Cypress",
-  "Jenkins",
-  "Openshift",
+  "Web Components",
+  "AI SDK",
+  "Playwright",
+  "AWS",
+  "Terraform",
   "Lighthouse",
-  "Git",
-  "GitLab",
-  "Jira",
   "BrowserStack",
-  "Miro",
-  "C#",
-  "Sonar Qube",
-  "Photoshop",
 ];
 
 const Header = ({ children }: { children?: ReactNode }) => (
@@ -62,7 +54,8 @@ const CV = () => (
           past five years I specialized in crafting beautiful, functional, and
           accessible websites that prioritize user experience. I comfortably
           navigate the entire stack with Angular and React being my go-to
-          technologies to create digital experiences that delight users.
+          technologies to create digital experiences that delight users. I like
+          to leverage AI to stay productive and efficient.
           <div className="flex gap-4 items-center mt-4">
             <span>Find me at</span>
             <SocialMediaIcons />

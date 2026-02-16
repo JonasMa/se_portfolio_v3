@@ -38,7 +38,7 @@ const IndexPage: React.FC = () => {
             I&apos;m a <span className="bg-yellow">Freelance Web Engineer</span>
           </div>
           <div className="font-sans mt-4 sm:w-2/3">
-            I&apos;m a software engineer with five years of experience at
+            I&apos;m a software engineer with seven years of experience at
             companies like Google. I like building fast, reliable and accessible
             web experiences over the full stack. Also I love a good challenge.
             If you got one - hit me up!
