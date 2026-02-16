@@ -16,7 +16,7 @@
     "technologies": ["Angular", "TypeScript", "RxJs"]
   },
   {
-    "id": "sphere",
+    "id": "food",
     "company": "Freelance",
     "title": "Food Board",
     "duration": { "from": "2024", "to": "" },

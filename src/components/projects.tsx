@@ -21,12 +21,12 @@ import Button from "./button";
 
 type Project = (typeof projects)[number];
 const featuredIds = [
+  "kipti",
   "critique",
   "ticket",
   "visana",
   "cider",
   "tracking",
-  "quiz",
 ];
 
 const featuredProjects = featuredIds
@@ -37,8 +37,10 @@ const moreProjects = projects.filter(({ id }) => !featuredIds.includes(id));
 const allProjects = [...featuredProjects, ...moreProjects];
 
 const images: Record<string, StaticImageData> = {
+  kipti: genericImage,
   visana: visanaImage,
   ticket: ticketImage,
+  sphere: genericImage,
   food: foodImage,
   quiz: quizImage,
   tracking: trackingImage,
