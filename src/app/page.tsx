@@ -24,14 +24,23 @@ const IndexPage: React.FC = () => {
               <span className="whitespace-nowrap flex gap-2 sm:gap-4 lg:gap-5">
                 <span>I&apos;m</span>
                 <div>
-                  <span className="relative w-[max-content] before:absolute before:inset-0 before:bg-ink before:animate-typewriter-5">
-                    Jonas
+                  <span className="relative inline-block">
+                    <span className="relative z-10">Jonas</span>
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 text-yellow animate-glitch-shift motion-reduce:hidden"
+                    >
+                      Jonas
+                    </span>
                   </span>
-                  <span className="text-yellow">.</span>
+                  <span
+                    aria-hidden
+                    className="inline-block align-baseline w-3 h-3 sm:w-4 sm:h-4 ml-1 bg-yellow"
+                  />
                 </div>
               </span>
             </h1>
-            <ProfilePic className="border-2 border-ink bg-yellow shadow-[6px_6px_0_0_#0a0a0a] hidden sm:block" />
+            <ProfilePic className="hidden sm:block" />
             <ProfilePic className="sm:hidden" cropped />
           </div>
           <div className="text-2xl sm:text-3xl tracking-tight">

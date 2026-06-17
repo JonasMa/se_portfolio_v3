@@ -10,14 +10,19 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        'typewriter-5': "typewriter 2s steps(5) forwards",
-      }, 
+        'glitch-shift': "glitch-shift 1100ms steps(8) forwards",
+      },
       keyframes: {
-        typewriter: {
-          to: {
-            left: "100%"
-          }
-        }
+        'glitch-shift': {
+          '0%':   { transform: 'translate(10px, -3px)', opacity: '1' },
+          '15%':  { transform: 'translate(-8px, 2px)',  opacity: '1' },
+          '30%':  { transform: 'translate(7px, 3px)',   opacity: '1' },
+          '45%':  { transform: 'translate(-5px, -2px)', opacity: '1' },
+          '60%':  { transform: 'translate(4px, 1px)',   opacity: '0.9' },
+          '75%':  { transform: 'translate(-2px, 0)',    opacity: '0.7' },
+          '90%':  { transform: 'translate(1px, 0)',     opacity: '0.4' },
+          '100%': { transform: 'translate(0, 0)',       opacity: '0' },
+        },
       }
     },
     colors: {
