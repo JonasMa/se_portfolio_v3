@@ -19,12 +19,12 @@ const IndexPage: React.FC = () => {
       <div className="pt-20 lg:pt-32 flex flex-col gap-4">
         <header>
           <div className="flex flex-col-reverse sm:flex-row sm:items-end sm:gap-5">
-            <h1 className="flex flex-wrap gap-2 sm:gap-4 lg:gap-5 mb-2 sm:mb-5 mt-2 sm:mt-16 text-black text-4xl sm:text-6xl lg:text-8xl font-bold font-sans">
+            <h1 className="flex flex-wrap gap-2 sm:gap-4 lg:gap-5 mb-2 sm:mb-5 mt-2 sm:mt-16 text-ink text-4xl sm:text-6xl lg:text-7xl font-bold font-sans tracking-tight">
               <span>Hi,</span>
               <span className="whitespace-nowrap flex gap-2 sm:gap-4 lg:gap-5">
                 <span>I&apos;m</span>
                 <div>
-                  <span className="relative w-[max-content] before:absolute before:inset-0 before:bg-black before:animate-typewriter-5">
+                  <span className="relative w-[max-content] before:absolute before:inset-0 before:bg-ink before:animate-typewriter-5">
                     Jonas
                   </span>
                   <span className="text-yellow">.</span>
@@ -34,10 +34,17 @@ const IndexPage: React.FC = () => {
             <ProfilePic className="rounded-full hidden sm:block" />
             <ProfilePic className="sm:hidden" cropped />
           </div>
-          <div className="text-2xl sm:text-3xl">
-            I&apos;m a <span className="bg-yellow">Freelance Web Engineer</span>
+          <div className="text-2xl sm:text-3xl tracking-tight">
+            I&apos;m a{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10">Freelance Web Engineer</span>
+              <span
+                aria-hidden
+                className="absolute left-0 right-0 bottom-0 h-3 sm:h-4 bg-yellow -z-0"
+              />
+            </span>
           </div>
-          <div className="font-sans mt-4 sm:w-2/3">
+          <div className="font-sans mt-4 sm:w-2/3 text-muted leading-relaxed">
             I&apos;m a software engineer with seven years of experience at
             companies like Google. I like building fast, reliable and accessible
             web experiences over the full stack. Also I love a good challenge.

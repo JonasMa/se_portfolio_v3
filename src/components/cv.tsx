@@ -34,21 +34,21 @@ const moreTechnologies = [
 ];
 
 const Header = ({ children }: { children?: ReactNode }) => (
-  <div className="flex flex-col gap-4 lg:gap-8 items-center lg:items-start mb-8 md:mb-16 mt-28">
-    <h2 className="font-sans text-black text-4xl lg:text-6xl font-bold">
+  <div className="flex flex-col gap-4 lg:gap-6 items-center lg:items-start mb-8 md:mb-12 mt-28">
+    <h2 className="font-sans text-ink text-3xl lg:text-5xl font-bold tracking-tight">
       {children}
       <span className="text-yellow">.</span>
     </h2>
-    <div className="h-1 lg:h-2 bg-black w-full"></div>
+    <div className="h-px bg-border-strong w-full"></div>
   </div>
 );
 
 const CV = () => (
   <>
-    <section id="about" className="text-black">
+    <section id="about" className="text-ink">
       <Header> About me </Header>
       <div className="flex gap-8 flex-col sm:flex-row">
-        <div className="basis-2/3">
+        <div className="basis-2/3 leading-relaxed">
           My journey in computer science began somewhat by chance, but quickly
           let me to find my passion for user-centered web development. Over the
           past five years I specialized in crafting beautiful, functional, and

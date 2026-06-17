@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`text-black selection:bg-yellow ${inter.variable} ${jetbrainsMono.variable}`}
+        className={`bg-bg text-ink selection:bg-yellow ${inter.variable} ${jetbrainsMono.variable}`}
       >
         {children}
         <Analytics />
