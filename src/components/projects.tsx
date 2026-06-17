@@ -93,48 +93,85 @@ export default function Projects() {
   };
 
   return (
-    <div className="flex flex-col md:grid md:grid-cols-2 gap-x-10 gap-y-14">
-      <SpringModal
-        project={selectedProject}
-        onClose={closeModal}
-      />
-      {projectsToDisplay.map(({ company, title, technologies, id }, index) => (
-        <div key={id}>
-          <motion.div
-            whileHover={{ scale: 0.95, rotate: "-1deg" }}
-            className={
-              "border border-yellow col-span-12 md:col-span-4 group relative min-h-52 sm:min-h-[300px] cursor-pointer overflow-hidden rounded-lg bg-slate-100 p-8"
-            }
-            key={index}
-            onClick={() => openModal(index)}
-          >
-            <div className="absolute bg-white overflow-hidden bottom-0 left-4 right-4 top-0 translate-y-8 rounded-t-2xl bg-gradient-to-br transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-              {images[id] && (
-                <Image src={images[id]} alt="" placeholder="blur" />
-              )}
-            </div>
-          </motion.div>
-          <div className="text-xs font-normal text-black mt-4">{company}</div>
-          <h3 className="text-lg font-sans font-bold text-black">{title}</h3>
-          <div className="flex gap-2 text-grey flex-wrap">
-            {technologies.map((tech) => (
-              <span key={tech} className="whitespace-nowrap">{tech}</span>
-            ))}
-          </div>
-        </div>
-      ))}
+    <>
+      <SpringModal project={selectedProject} onClose={closeModal} />
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-x-8 gap-y-12">
+        {projectsToDisplay.map((project, index) => {
+          const isFeatured = index < 2;
+          const colSpan = isFeatured
+            ? "md:col-span-6 lg:col-span-3"
+            : "md:col-span-3 lg:col-span-2";
+          return (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              featured={isFeatured}
+              className={colSpan}
+              onClick={() => openModal(index)}
+            />
+          );
+        })}
+      </div>
       {!doLoadMore && (
-        <Button
-          color="yellow"
-          title="Load more projects"
-          onClick={() => setDoLoadMore(true)}
-        >
-          Load more
-        </Button>
+        <div className="mt-12 flex justify-center">
+          <Button
+            variant="ghost"
+            title="Load more projects"
+            onClick={() => setDoLoadMore(true)}
+          >
+            Load more projects
+          </Button>
+        </div>
       )}
-    </div>
+    </>
   );
 }
+
+const ProjectCard: React.FC<{
+  project: Project;
+  featured: boolean;
+  className?: string;
+  onClick: () => void;
+}> = ({ project, featured, className = "", onClick }) => {
+  const { id, company, title, technologies } = project;
+  const aspect = featured ? "aspect-[16/10]" : "aspect-[4/3]";
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`group text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ink ${className}`}
+    >
+      <div
+        className={`relative ${aspect} overflow-hidden bg-surface border-2 border-ink shadow-[6px_6px_0_0_#0a0a0a] transition-transform duration-150 ease-out group-hover:-translate-x-[2px] group-hover:-translate-y-[2px] group-hover:shadow-[8px_8px_0_0_#0a0a0a]`}
+      >
+        {images[id] && (
+          <Image
+            src={images[id]}
+            alt=""
+            placeholder="blur"
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+          />
+        )}
+      </div>
+      <div className="mt-4 font-mono text-xs uppercase tracking-wider text-muted">
+        {company}
+      </div>
+      <h3 className="mt-1 font-sans font-semibold text-ink tracking-tight text-lg leading-snug">
+        {title}
+      </h3>
+      <div className="mt-2 flex gap-x-3 gap-y-1 text-sm text-muted flex-wrap">
+        {technologies.slice(0, 4).map((tech) => (
+          <span key={tech} className="whitespace-nowrap">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </button>
+  );
+};
 
 const SpringModal = ({
   project,
@@ -143,6 +180,15 @@ const SpringModal = ({
   onClose: () => void;
   project?: Project;
 }) => {
+  useEffect(() => {
+    if (!project) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [project, onClose]);
+
   return (
     <AnimatePresence>
       {project && (
@@ -150,47 +196,65 @@ const SpringModal = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={{ duration: 0.18 }}
           onClick={() => onClose()}
-          className="text-black bg-slate-900/20 backdrop-blur p-8 fixed inset-0 z-50 grid place-items-center overflow-y-scroll cursor-pointer"
+          className="text-ink bg-ink/40 backdrop-blur-sm p-4 sm:p-8 fixed inset-0 z-50 grid place-items-center overflow-y-auto cursor-pointer"
         >
-          <button
-            className="absolute top-2 right-2 bg-grey-light bg-opacity-50 px-4 py-2 m-2 font-mono rounded-full"
-            onClick={() => onClose()}
-          >
-            x
-          </button>
           <motion.div
-            initial={{ scale: 0, rotate: "12.5deg" }}
-            animate={{ scale: 1, rotate: "0deg" }}
-            exit={{ scale: 0, rotate: "0deg" }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-white rounded-lg w-full max-w-lg shadow-xl cursor-default relative overflow-hidden"
+            className="bg-bg w-full max-w-2xl shadow-[8px_8px_0_0_#0a0a0a] cursor-default relative overflow-hidden border-2 border-ink"
           >
+            <button
+              aria-label="Close project details"
+              className="absolute top-3 right-3 z-10 grid place-items-center w-10 h-10 bg-bg border-2 border-ink text-ink shadow-[3px_3px_0_0_#0a0a0a] transition-transform duration-150 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0_0_#0a0a0a]"
+              onClick={() => onClose()}
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+                <path d="M3 3L13 13M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            </button>
             {images[project.id] && (
-              <div className="flex items-center h-[300px] overflow-hidden">
-                <Image src={images[project.id]} alt="" placeholder="blur" />
+              <div className="relative aspect-[16/9] overflow-hidden bg-surface">
+                <Image
+                  src={images[project.id]}
+                  alt=""
+                  placeholder="blur"
+                  fill
+                  sizes="(min-width: 768px) 672px, 100vw"
+                  className="object-cover"
+                />
               </div>
             )}
-            <div className="relative z-10 p-6 lg:p-10">
-              <h1 className="font-sans text-xl font-bold">{project.title}</h1>
-              <h2>{project.company}</h2>
-              <div className="mt-1">
+            <div className="p-6 lg:p-10">
+              <div className="font-mono text-xs uppercase tracking-wider text-muted">
+                {project.company}
+              </div>
+              <h1 className="mt-1 font-sans text-2xl font-semibold tracking-tight text-ink">
+                {project.title}
+              </h1>
+              <div className="mt-4">
                 <Chips chips={project.technologies} />
               </div>
-              <p>{project.description}</p>
+              <p className="mt-5 text-muted leading-relaxed">
+                {project.description}
+              </p>
               {project.artifact && (
-                <>
-                  <h2 className="font-sans text-md mt-4 font-bold">
-                    Artifacts
-                  </h2>
+                <div className="mt-6 pt-6 border-t border-border">
+                  <div className="font-mono text-xs uppercase tracking-wider text-muted">
+                    Artifact
+                  </div>
                   <Link
                     href={project.artifact.link}
-                    className="hover:text-yellow underline"
+                    className="mt-1 inline-block text-ink underline underline-offset-4 decoration-border-strong hover:decoration-ink transition-colors"
                     target="_blank"
                   >
                     {project.artifact.name}
                   </Link>
-                </>
+                </div>
               )}
             </div>
           </motion.div>

@@ -31,17 +31,27 @@ const IndexPage: React.FC = () => {
                 </div>
               </span>
             </h1>
-            <ProfilePic className="rounded-full hidden sm:block" />
+            <ProfilePic className="border-2 border-ink bg-yellow shadow-[6px_6px_0_0_#0a0a0a] hidden sm:block" />
             <ProfilePic className="sm:hidden" cropped />
           </div>
           <div className="text-2xl sm:text-3xl tracking-tight">
             I&apos;m a{" "}
             <span className="relative inline-block">
               <span className="relative z-10">Freelance Web Engineer</span>
-              <span
+              <svg
                 aria-hidden
-                className="absolute left-0 right-0 bottom-0 h-3 sm:h-4 bg-yellow -z-0"
-              />
+                className="absolute left-0 right-0 -bottom-2 w-full h-2.5 text-yellow"
+                viewBox="0 0 300 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M2 6 Q 25 1, 50 5 T 100 5 T 150 5 T 200 5 T 250 5 T 298 5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+              </svg>
             </span>
           </div>
           <div className="font-sans mt-4 sm:w-2/3 text-muted leading-relaxed">
@@ -54,7 +64,7 @@ const IndexPage: React.FC = () => {
             <Button href="mailto:contact@jmattes.de">Contact me</Button>
             <Button
               href="/resume.pdf"
-              color="yellow"
+              variant="ghost"
               title="Opens resume PDF in a new tab"
             >
               Download resume

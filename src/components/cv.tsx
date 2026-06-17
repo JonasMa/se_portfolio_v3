@@ -33,12 +33,26 @@ const moreTechnologies = [
   "BrowserStack",
 ];
 
-const Header = ({ children }: { children?: ReactNode }) => (
+const Header = ({
+  index,
+  children,
+}: {
+  index: number;
+  children?: ReactNode;
+}) => (
   <div className="flex flex-col gap-4 lg:gap-6 items-center lg:items-start mb-8 md:mb-12 mt-28">
-    <h2 className="font-sans text-ink text-3xl lg:text-5xl font-bold tracking-tight">
-      {children}
-      <span className="text-yellow">.</span>
-    </h2>
+    <div className="flex items-center gap-3 lg:gap-4">
+      <span
+        aria-hidden
+        className="inline-block w-3 h-3 bg-yellow border-2 border-ink"
+      />
+      <span className="font-mono text-xs lg:text-sm text-muted tracking-wider">
+        {String(index).padStart(2, "0")}
+      </span>
+      <h2 className="font-sans text-ink text-3xl lg:text-5xl font-bold tracking-tight">
+        {children}
+      </h2>
+    </div>
     <div className="h-px bg-border-strong w-full"></div>
   </div>
 );
@@ -46,7 +60,7 @@ const Header = ({ children }: { children?: ReactNode }) => (
 const CV = () => (
   <>
     <section id="about" className="text-ink">
-      <Header> About me </Header>
+      <Header index={1}> About me </Header>
       <div className="flex gap-8 flex-col sm:flex-row">
         <div className="basis-2/3 leading-relaxed">
           My journey in computer science began somewhat by chance, but quickly
@@ -76,13 +90,13 @@ const CV = () => (
       </div>
     </section>
     <section id="projects">
-      <Header> Projects </Header>
+      <Header index={2}> Projects </Header>
       <Suspense fallback={<Loader />}>
         <Projects />
       </Suspense>
     </section>
     <section id="jobs">
-      <Header> Experience </Header>
+      <Header index={3}> Experience </Header>
       <Suspense fallback={<Loader />}>
         <Jobs />
       </Suspense>
