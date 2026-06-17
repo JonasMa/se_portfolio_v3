@@ -4,22 +4,27 @@ import jobs from "../content/jobs/jobs.json";
 
 export default function Jobs() {
   return (
-    <div className="flex flex-col gap-8 text-black">
+    <ol className="flex flex-col">
       {jobs.map(({ company, duration, description, technologies }, index) => (
-        <div key={index} className="border-b border-grey-light pb-6">
-          <div className="whitespace-nowrap flex justify-between">
-            <h3 className="font-sans font-bold text-xl">{company}</h3>
-            <p className="font-sans">
-              {duration.from}
-              {duration.to && " - " + duration.to}
+        <li
+          key={index}
+          className="group relative grid md:grid-cols-[110px_1fr] gap-y-2 gap-x-10 py-8 first:pt-0 border-t border-border first:border-t-0"
+        >
+          <div className="font-mono text-sm text-muted md:pt-1.5">
+            {duration.from}
+            {duration.to ? ` – ${duration.to}` : " – Present"}
+          </div>
+          <div>
+            <h3 className="font-sans font-bold text-xl tracking-tight text-ink">
+              {company}
+            </h3>
+            <p className="mt-2 text-muted leading-relaxed max-w-2xl">
+              {description}
             </p>
+            <Chips className="mt-4" chips={technologies} />
           </div>
-          <div className="text-m list-disc mt-2">
-            {description}
-          </div>
-          <Chips className="col-start-2 mt-2" chips={technologies} />
-        </div>
+        </li>
       ))}
-    </div>
+    </ol>
   );
 }
