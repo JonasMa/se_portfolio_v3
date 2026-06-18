@@ -4,7 +4,7 @@ type Variant = "primary" | "ghost";
 
 const variantClasses: Record<Variant, string> = {
   primary: "bg-ink text-bg border-2 border-ink",
-  ghost: "bg-yellow text-ink border-2 border-ink",
+  ghost: "bg-yellow text-black border-2 border-ink",
 };
 
 const Button: React.FC<{
@@ -14,7 +14,7 @@ const Button: React.FC<{
   title?: string;
   onClick?: () => void;
 }> = ({ children, href, variant = "primary", title, onClick }) => {
-  const className = `group inline-flex items-center justify-center gap-2 min-h-[44px] px-5 mt-6 text-sm font-semibold tracking-tight shadow-[4px_4px_0_0_#0a0a0a] transition-all duration-150 ease-out hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_#0a0a0a] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none ${variantClasses[variant]}`;
+  const className = `group inline-flex items-center justify-center gap-2 min-h-[44px] px-5 mt-6 text-sm font-semibold tracking-tight shadow-brutal transition-all duration-150 ease-out hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-xs active:translate-x-[4px] active:translate-y-[4px] active:shadow-none ${variantClasses[variant]}`;
 
   const content = (
     <>

@@ -143,7 +143,7 @@ const ProjectCard: React.FC<{
       className={`group text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ink ${className}`}
     >
       <div
-        className={`relative ${aspect} overflow-hidden bg-surface border-2 border-ink shadow-[6px_6px_0_0_#0a0a0a] transition-transform duration-150 ease-out group-hover:-translate-x-[2px] group-hover:-translate-y-[2px] group-hover:shadow-[8px_8px_0_0_#0a0a0a]`}
+        className={`relative ${aspect} overflow-hidden bg-surface border-2 border-ink shadow-brutal-md transition-transform duration-150 ease-out group-hover:-translate-x-[2px] group-hover:-translate-y-[2px] group-hover:shadow-brutal-lg`}
       >
         {images[id] && (
           <Image
@@ -198,7 +198,7 @@ const SpringModal = ({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.18 }}
           onClick={() => onClose()}
-          className="text-ink bg-ink/40 backdrop-blur-sm p-4 sm:p-8 fixed inset-0 z-50 grid place-items-center overflow-y-auto cursor-pointer"
+          className="text-ink bg-overlay/60 backdrop-blur-sm p-4 sm:p-8 fixed inset-0 z-50 grid place-items-center overflow-y-auto cursor-pointer"
         >
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -206,11 +206,11 @@ const SpringModal = ({
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-bg w-full max-w-2xl shadow-[8px_8px_0_0_#0a0a0a] cursor-default relative overflow-hidden border-2 border-ink"
+            className="bg-bg w-full max-w-2xl shadow-brutal-lg cursor-default relative overflow-hidden border-2 border-ink"
           >
             <button
               aria-label="Close project details"
-              className="absolute top-3 right-3 z-10 grid place-items-center w-10 h-10 bg-bg border-2 border-ink text-ink shadow-[3px_3px_0_0_#0a0a0a] transition-transform duration-150 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0_0_#0a0a0a]"
+              className="absolute top-3 right-3 z-10 grid place-items-center w-10 h-10 bg-bg border-2 border-ink text-ink shadow-brutal-sm transition-transform duration-150 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-brutal-xs"
               onClick={() => onClose()}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>

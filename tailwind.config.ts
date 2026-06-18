@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 const { fontFamily } = require('tailwindcss/defaultTheme')
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -23,19 +24,29 @@ const config: Config = {
           '90%':  { transform: 'translate(1px, 0)',     opacity: '0.4' },
           '100%': { transform: 'translate(0, 0)',       opacity: '0' },
         },
-      }
+      },
+      boxShadow: {
+        'brutal-xs': '2px 2px 0 0 rgb(var(--shadow))',
+        'brutal-sm': '3px 3px 0 0 rgb(var(--shadow))',
+        'brutal':    '4px 4px 0 0 rgb(var(--shadow))',
+        'brutal-md': '6px 6px 0 0 rgb(var(--shadow))',
+        'brutal-lg': '8px 8px 0 0 rgb(var(--shadow))',
+      },
     },
     colors: {
       white: '#FFF',
       black: '#000',
+      transparent: 'transparent',
+      current: 'currentColor',
       'blue-dark': '#023047',
       'blue-light': '#8ECAE6',
-      bg: '#fafaf7',
-      surface: '#f3f1ea',
-      ink: '#0a0a0a',
-      muted: '#6b6b6b',
-      border: '#e5e3dc',
-      'border-strong': '#d1cec5',
+      bg:             'rgb(var(--bg) / <alpha-value>)',
+      surface:        'rgb(var(--surface) / <alpha-value>)',
+      ink:            'rgb(var(--ink) / <alpha-value>)',
+      muted:          'rgb(var(--muted) / <alpha-value>)',
+      border:         'rgb(var(--border) / <alpha-value>)',
+      'border-strong':'rgb(var(--border-strong) / <alpha-value>)',
+      overlay:        'rgb(var(--overlay) / <alpha-value>)',
       grey: '#767676',
       'grey-light': '#bbb',
       yellow: '#fbe284',

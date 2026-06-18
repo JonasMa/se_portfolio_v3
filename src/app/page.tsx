@@ -11,7 +11,7 @@ const IndexPage: React.FC = () => {
   return (
     <div className="gap-8 px-4 lg:px-12 mb-16 container min-h-screen m-auto">
       <a
-        className="absolute left-0 -translate-y-full focus:translate-y-0 text-black p-1"
+        className="absolute left-0 -translate-y-full focus:translate-y-0 text-ink bg-bg p-1"
         href="#main"
       >
         Skip to content
@@ -83,7 +83,7 @@ const IndexPage: React.FC = () => {
       </div>
       <main
         id="main"
-        className="lg:pb-20 sm:mt-20 font-mono text-white overflow-y-auto flex-shrink-0"
+        className="lg:pb-20 sm:mt-20 font-mono overflow-y-auto flex-shrink-0"
       >
         <CV />
       </main>

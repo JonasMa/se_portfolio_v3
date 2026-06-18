@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 const Impressum: React.FC = () => (
-  <div className="container font-mono text-black mx-auto py-12 px-4">
+  <div className="container font-mono text-ink mx-auto py-12 px-4">
     <Link href="/" className="block text-xl mb-16">
       &lt; BACK
     </Link>
