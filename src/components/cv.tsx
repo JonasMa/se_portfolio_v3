@@ -4,6 +4,7 @@ import Loader from "./loader";
 import Jobs from "./jobs";
 import Projects from "./projects";
 import Chips from "./chips";
+import Button from "./button";
 import SocialMediaIcons from "../components/social";
 
 const technologies = [
@@ -100,6 +101,59 @@ const CV = () => (
       <Suspense fallback={<Loader />}>
         <Jobs />
       </Suspense>
+    </section>
+    <section id="contact" className="text-ink">
+      <Header index={4}> Get in touch </Header>
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 lg:items-end">
+        <div className="basis-2/3">
+          <h3 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight leading-tight">
+            Got a challenge worth solving?{" "}
+            <span className="relative inline-block whitespace-nowrap">
+              <span className="relative z-10">Let&apos;s talk.</span>
+              <svg
+                aria-hidden
+                className="absolute left-0 right-0 -bottom-1 w-full h-2.5 text-yellow"
+                viewBox="0 0 300 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M2 6 Q 25 1, 50 5 T 100 5 T 150 5 T 200 5 T 250 5 T 298 5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+          </h3>
+          <p className="mt-4 text-muted leading-relaxed max-w-xl">
+            I&apos;m open to freelance work across the full stack — modernizing
+            an existing app, building a new product from scratch, or jumping in
+            wherever a tricky problem needs solving. If you&apos;ve got something
+            interesting, I&apos;d love to hear about it.
+          </p>
+          <Button href="mailto:contact@jmattes.de" variant="ghost">
+            Contact me
+          </Button>
+        </div>
+        <div className="basis-1/3 font-mono text-sm">
+          <div className="text-xs uppercase tracking-wider text-muted">
+            Email
+          </div>
+          <a
+            href="mailto:contact@jmattes.de"
+            className="mt-1 inline-block text-ink underline underline-offset-4 decoration-border-strong hover:decoration-ink transition-colors break-all"
+          >
+            contact@jmattes.de
+          </a>
+          <div className="mt-6 text-xs uppercase tracking-wider text-muted">
+            Elsewhere
+          </div>
+          <div className="mt-3">
+            <SocialMediaIcons />
+          </div>
+        </div>
+      </div>
     </section>
   </>
 );
