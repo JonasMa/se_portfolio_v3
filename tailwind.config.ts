@@ -11,17 +11,17 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        'glitch-shift': "glitch-shift 1100ms steps(8) forwards",
+        'glitch-shift': "glitch-shift 700ms steps(8) forwards",
       },
       keyframes: {
         'glitch-shift': {
-          '0%':   { transform: 'translate(10px, -3px)', opacity: '1' },
-          '15%':  { transform: 'translate(-8px, 2px)',  opacity: '1' },
-          '30%':  { transform: 'translate(7px, 3px)',   opacity: '1' },
-          '45%':  { transform: 'translate(-5px, -2px)', opacity: '1' },
-          '60%':  { transform: 'translate(4px, 1px)',   opacity: '0.9' },
-          '75%':  { transform: 'translate(-2px, 0)',    opacity: '0.7' },
-          '90%':  { transform: 'translate(1px, 0)',     opacity: '0.4' },
+          '0%':   { transform: 'translate(4px, -1px)',  opacity: '0.8' },
+          '15%':  { transform: 'translate(-3px, 1px)',  opacity: '0.8' },
+          '30%':  { transform: 'translate(3px, 1px)',   opacity: '0.7' },
+          '45%':  { transform: 'translate(-2px, -1px)', opacity: '0.6' },
+          '60%':  { transform: 'translate(2px, 0)',     opacity: '0.5' },
+          '75%':  { transform: 'translate(-1px, 0)',    opacity: '0.4' },
+          '90%':  { transform: 'translate(1px, 0)',     opacity: '0.2' },
           '100%': { transform: 'translate(0, 0)',       opacity: '0' },
         },
       },
