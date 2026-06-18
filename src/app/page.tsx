@@ -83,7 +83,7 @@ const IndexPage: React.FC = () => {
       </div>
       <main
         id="main"
-        className="lg:pb-20 sm:mt-20 font-mono overflow-y-auto flex-shrink-0"
+        className="lg:pb-20 sm:mt-20 overflow-y-auto flex-shrink-0"
       >
         <CV />
       </main>
