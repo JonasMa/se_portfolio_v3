@@ -232,7 +232,7 @@ const SpringModal = ({
           >
             <button
               aria-label="Close project details"
-              className="absolute top-3 right-3 z-10 grid place-items-center w-10 h-10 bg-bg border-2 border-ink text-ink shadow-brutal-sm transition-transform duration-150 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-brutal-xs"
+              className="absolute top-3 right-3 z-10 grid place-items-center w-11 h-11 bg-bg border-2 border-ink text-ink shadow-brutal-sm transition-transform duration-150 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-brutal-xs"
               onClick={() => onClose()}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>

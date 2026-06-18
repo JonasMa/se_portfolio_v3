@@ -36,7 +36,7 @@ export default function ThemeToggle() {
       onClick={toggle}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="fixed top-4 right-4 z-40 grid place-items-center w-10 h-10 bg-bg border-2 border-ink text-ink shadow-brutal-sm transition-transform duration-150 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-brutal-xs"
+      className="fixed top-4 right-4 z-40 grid place-items-center w-11 h-11 bg-bg border-2 border-ink text-ink shadow-brutal-sm transition-transform duration-150 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-brutal-xs"
       suppressHydrationWarning
     >
       {mounted && isDark ? (

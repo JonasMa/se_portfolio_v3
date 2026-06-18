@@ -7,6 +7,7 @@ const IconLinkedin = () => (
     rel="noreferrer noopener"
     aria-label="LinkedIn (opens in a new tab)"
     title="LinkedIn"
+    className="inline-flex items-center justify-center min-w-[44px] min-h-[44px] -m-2"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

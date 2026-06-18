@@ -7,6 +7,7 @@ const IconGitHub = () => (
     rel="noreferrer noopener"
     aria-label="GitHub (opens in a new tab)"
     title="GitHub"
+    className="inline-flex items-center justify-center min-w-[44px] min-h-[44px] -m-2"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
