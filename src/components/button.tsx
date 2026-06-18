@@ -1,10 +1,11 @@
 import React from "react";
 
-type Variant = "primary" | "ghost";
+type Variant = "primary" | "ghost" | "outline";
 
 const variantClasses: Record<Variant, string> = {
   primary: "bg-ink text-bg border-2 border-ink",
   ghost: "bg-yellow text-black border-2 border-ink",
+  outline: "bg-bg text-ink border-2 border-ink",
 };
 
 const Button: React.FC<{

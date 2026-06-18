@@ -5,6 +5,7 @@
     "title": "AI-enhanced full stack SaaS platform",
     "duration": { "from": "2025", "to": "2026" },
     "description": "Architected and built an AI-enhanced full-stack SaaS platform as technical lead. Established infrastructure, including AWS deployment (ECS, RDS), CI/CD pipelines, and automated testing. Adopted AI-first development approach using Claude and GPT-4 for code review, refactoring suggestions, and rapid iteration on complex features.",
+    "metric": { "value": "0→1", "label": "Built & shipped as technical lead" },
     "technologies": ["React", "NextJS", "TypeScript", "Hono", "AI SDK", "PostgreSQL", "Terraform", "AWS"]
   },
   {
@@ -37,6 +38,7 @@
     "title": "Streamlining Code Review",
     "duration": { "from": "2022", "to": "2023" },
     "description": "Part of a small, high-impact team maintaining a code review platform for 80,000+ developers, owning critical features that ensured global developer productivity and satisfaction. Led data-driven product improvements by analyzing user behavior patterns, iterating on solutions, and implementing features that measurably improved developer efficiency and satisfaction: improved IDE integration, reduced review friction, and optimized workflows. My work led to 25+ SWE annual productivity savings.",
+    "metric": { "value": "25+ SWE-yrs", "label": "Productivity saved · 80k+ developers" },
     "technologies": ["Angular", "TypeScript", "NgRx", "RxJs"]
   },
   {
@@ -45,6 +47,7 @@
     "title": "Code Review IDE Integration",
     "duration": { "from": "2022", "to": "2023" },
     "description": "For the internal Google IDE (VSCode based) I worked on integrating code review artifacts into it. This makes it easier for users to work on comments they got on their code. Each feature was carefully planned in coordinance with UX research and rolled out to gradually. All while monitoring performance and satisfaction of over 80k users.",
+    "metric": { "value": "80k+", "label": "Developers on the integrated IDE" },
     "technologies": ["TypeScript", "VSCode API", "RxJs"]
   },
   {
@@ -53,6 +56,7 @@
     "title": "Insurance Calculator",
     "duration": { "from": "2021", "to": "2022" },
     "description": "I developed an online insurance calculator where users can browse and select their individual health insurance. It's basically a big fancy form, so validation of inputs played a crucial role. Naturally I took part in planning and execution of features in a Scrum based team.",
+    "metric": { "value": "Live", "label": "In production at visana.ch" },
     "technologies": [
       "Angular",
       "TypeScript",
@@ -73,6 +77,7 @@
     "title": "Modernize the Ticket Vending Machine",
     "duration": { "from": "2020", "to": "2021" },
     "description": "Rebuilt, in a team of <10 people, Swiss Federal Railways (SBB) ticket vending machine interface, serving millions of passengers across Switzerland's 1,000+ self-service terminals. Architected and owned state machine logic for critical payment processing, ticket printing, and transaction workflows, ensuring fault-tolerant operation for 24/7 unattended deployment across machines nationwide. Collaborated with disability advocacy organizations throughout the development lifecycle, conducting usability testing with users with visual, motor, and cognitive impairments to ensure legal accessibility compliance and universal usability.",
+    "metric": { "value": "1,000+", "label": "Terminals serving millions of passengers" },
     "technologies": [
       "TypeScript",
       "Stencil",
@@ -94,6 +99,7 @@
     "title": "Custom Tracking Library",
     "duration": { "from": "2020", "to": "2021" },
     "description": "To be GDPR compliant and not reliant on Googles tracking we developed cross-browser compatible library to track user behaviour and displayed contents. This package grew to be a neccessary dependency on the SBB webite, so a very broad compatibility of browsers and versions was crucial. We ensured this by utilizing test driven development and testing our code in browsers on all platforms using BrowserStack.",
+    "metric": { "value": "SBB-wide", "label": "GDPR-compliant tracking, published to npm" },
     "technologies": ["JavaScript", "Karma", "Babel", "Webpack", "BrowserStack", "TDD"],
     "artifact": {
       "name": "NPM package",

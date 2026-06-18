@@ -115,7 +115,7 @@ export default function Projects() {
       {!doLoadMore && (
         <div className="mt-12 flex justify-center">
           <Button
-            variant="ghost"
+            variant="outline"
             title="Load more projects"
             onClick={() => setDoLoadMore(true)}
           >
@@ -134,6 +134,7 @@ const ProjectCard: React.FC<{
   onClick: () => void;
 }> = ({ project, featured, className = "", onClick }) => {
   const { id, company, title, technologies } = project;
+  const metric = "metric" in project ? project.metric : undefined;
   const aspect = featured ? "aspect-[16/10]" : "aspect-[4/3]";
 
   return (
@@ -155,6 +156,18 @@ const ProjectCard: React.FC<{
             className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
           />
         )}
+        {featured && metric && (
+          <div className="absolute left-0 bottom-0 bg-bg border-t-2 border-r-2 border-ink px-3 py-2 max-w-[85%]">
+            <div className="font-sans font-bold text-ink leading-none text-xl">
+              <span className="bg-yellow box-decoration-clone px-1">
+                {metric.value}
+              </span>
+            </div>
+            <div className="font-mono text-[10px] uppercase tracking-wider text-muted mt-1.5 leading-tight">
+              {metric.label}
+            </div>
+          </div>
+        )}
       </div>
       <div className="mt-4 font-mono text-xs uppercase tracking-wider text-muted">
         {company}
@@ -162,13 +175,22 @@ const ProjectCard: React.FC<{
       <h3 className="mt-1 font-sans font-semibold text-ink tracking-tight text-lg leading-snug">
         {title}
       </h3>
-      <div className="mt-2 flex gap-x-3 gap-y-1 text-sm text-muted flex-wrap">
-        {technologies.slice(0, 4).map((tech) => (
-          <span key={tech} className="whitespace-nowrap">
-            {tech}
+      {!featured && metric ? (
+        <div className="mt-2 flex items-baseline gap-2 text-xs text-muted">
+          <span className="font-sans font-bold text-ink bg-yellow box-decoration-clone px-1">
+            {metric.value}
           </span>
-        ))}
-      </div>
+          <span className="font-mono leading-tight">{metric.label}</span>
+        </div>
+      ) : (
+        <div className="mt-2 flex gap-x-3 gap-y-1 text-sm text-muted flex-wrap">
+          {technologies.slice(0, 4).map((tech) => (
+            <span key={tech} className="whitespace-nowrap">
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
     </button>
   );
 };
@@ -236,6 +258,16 @@ const SpringModal = ({
               <h1 className="mt-1 font-sans text-2xl font-semibold tracking-tight text-ink">
                 {project.title}
               </h1>
+              {"metric" in project && project.metric && (
+                <div className="mt-4 flex items-baseline gap-3">
+                  <span className="font-sans font-bold text-2xl text-ink leading-none bg-yellow box-decoration-clone px-1">
+                    {project.metric.value}
+                  </span>
+                  <span className="font-mono text-xs uppercase tracking-wider text-muted leading-tight">
+                    {project.metric.label}
+                  </span>
+                </div>
+              )}
               <div className="mt-4">
                 <Chips chips={project.technologies} />
               </div>
