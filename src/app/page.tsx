@@ -91,8 +91,7 @@ const IndexPage: React.FC = () => {
         <div className="mt-16 font-mono text-sm">
           <Disclaimer />
         </div>
-        <div className="flex gap-12 font-mono justify-between mt-8">
-          <SocialMediaIcons />
+        <div className="flex gap-12 font-mono justify-end mt-8">
           <Link href="/impressum" className="hover:text-yellow underline">
             Impressum
           </Link>
