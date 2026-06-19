@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import projects from "../content/projects/projects.json";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,7 +9,6 @@ import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import visanaImage from "../../public/projects/visana.png";
 import ticketImage from "../../public/projects/ticket.png";
-import foodImage from "../../public/projects/food.png";
 import quizImage from "../../public/projects/quiz.jpg";
 import trackingImage from "../../public/projects/tracking.png";
 import vrImage from "../../public/projects/vr.jpg";
@@ -41,14 +40,12 @@ const images: Record<string, StaticImageData> = {
   visana: visanaImage,
   ticket: ticketImage,
   sphere: genericImage,
-  food: foodImage,
   quiz: quizImage,
   tracking: trackingImage,
   vr: vrImage,
   home: homeImage,
   critique: critiqueImage,
   cider: ciderImage,
-  dashboard: genericImage,
   ar: genericImage,
   handyman: genericImage,
 };
@@ -95,7 +92,7 @@ export default function Projects() {
   return (
     <>
       <SpringModal project={selectedProject} onClose={closeModal} />
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-x-8 gap-y-12">
+      <div className="grid items-baseline grid-cols-1 md:grid-cols-6 gap-x-8 gap-y-12">
         {projectsToDisplay.map((project, index) => {
           const isFeatured = index < 2;
           const colSpan = isFeatured
@@ -202,14 +199,71 @@ const SpringModal = ({
   onClose: () => void;
   project?: Project;
 }) => {
+  const panelRef = useRef<HTMLDivElement>(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
   useEffect(() => {
     if (!project) return;
+
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+
+    // Lock background scroll, compensating for the removed scrollbar width
+    // so the page underneath doesn't shift.
+    const { body } = document;
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    const prevOverflow = body.style.overflow;
+    const prevPaddingRight = body.style.paddingRight;
+    body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) body.style.paddingRight = `${scrollbarWidth}px`;
+
+    // Move focus into the dialog.
+    panelRef.current?.focus();
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        onCloseRef.current();
+        return;
+      }
+      if (e.key !== "Tab") return;
+
+      const panel = panelRef.current;
+      if (!panel) return;
+      const focusables = Array.from(
+        panel.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((el) => el.offsetParent !== null || el === panel);
+
+      if (focusables.length === 0) {
+        e.preventDefault();
+        panel.focus();
+        return;
+      }
+
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement;
+
+      if (e.shiftKey && (active === first || active === panel)) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [project, onClose]);
+
+    document.addEventListener("keydown", onKey);
+
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      body.style.overflow = prevOverflow;
+      body.style.paddingRight = prevPaddingRight;
+      previouslyFocused?.focus?.();
+    };
+  }, [project]);
 
   return (
     <AnimatePresence>
@@ -220,15 +274,20 @@ const SpringModal = ({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.18 }}
           onClick={() => onClose()}
-          className="text-ink bg-overlay/60 backdrop-blur-sm p-4 sm:p-8 fixed inset-0 z-50 grid place-items-center overflow-y-auto cursor-pointer"
+          className="text-ink bg-overlay/60 backdrop-blur-sm p-4 sm:p-8 fixed inset-0 z-50 grid place-items-center cursor-pointer"
         >
           <motion.div
+            ref={panelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
+            tabIndex={-1}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-bg w-full max-w-2xl shadow-brutal-lg cursor-default relative overflow-hidden border-2 border-ink"
+            className="bg-bg w-full max-w-2xl max-h-[calc(100dvh-2rem)] sm:max-h-[calc(100dvh-4rem)] flex flex-col shadow-brutal-lg cursor-default relative overflow-hidden border-2 border-ink focus:outline-none"
           >
             <button
               aria-label="Close project details"
@@ -239,6 +298,7 @@ const SpringModal = ({
                 <path d="M3 3L13 13M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </button>
+            <div className="min-h-0 overflow-y-auto overscroll-contain">
             {images[project.id] && (
               <div className="relative aspect-[16/9] overflow-hidden bg-surface">
                 <Image
@@ -255,11 +315,30 @@ const SpringModal = ({
               <div className="font-mono text-xs uppercase tracking-wider text-muted">
                 {project.company}
               </div>
-              <h1 className="mt-1 font-sans text-2xl font-semibold tracking-tight text-ink">
+              <h1
+                id="project-modal-title"
+                className="mt-1 font-sans text-2xl font-semibold tracking-tight text-ink"
+              >
                 {project.title}
               </h1>
+              <div className="mt-2 flex flex-wrap items-center gap-x-2.5 gap-y-1 font-mono text-xs uppercase tracking-wider text-muted">
+                {"role" in project && project.role && (
+                  <span>{project.role}</span>
+                )}
+                {"role" in project &&
+                  project.role &&
+                  formatDuration(project.duration) && (
+                    <span aria-hidden className="text-border-strong">
+                      /
+                    </span>
+                  )}
+                {formatDuration(project.duration) && (
+                  <span>{formatDuration(project.duration)}</span>
+                )}
+              </div>
+
               {"metric" in project && project.metric && (
-                <div className="mt-4 flex items-baseline gap-3">
+                <div className="mt-5 inline-flex items-baseline gap-3 border-2 border-ink bg-bg px-3 py-2 shadow-brutal-sm">
                   <span className="font-sans font-bold text-2xl text-black leading-none bg-yellow box-decoration-clone px-1">
                     {project.metric.value}
                   </span>
@@ -268,12 +347,45 @@ const SpringModal = ({
                   </span>
                 </div>
               )}
-              <div className="mt-4">
-                <Chips chips={project.technologies} />
-              </div>
-              <p className="mt-5 text-muted leading-relaxed">
-                {project.description}
+
+              <p className="mt-6 font-sans text-lg text-ink leading-relaxed">
+                {project.summary}
               </p>
+
+              <SectionLabel className="mt-8">The Challenge</SectionLabel>
+              <p className="mt-3 text-muted leading-relaxed">
+                {project.context}
+              </p>
+
+              <SectionLabel className="mt-8">What I did</SectionLabel>
+              <ul className="mt-4 space-y-3">
+                {project.highlights.map((highlight) => (
+                  <li key={highlight} className="flex gap-3">
+                    <span
+                      aria-hidden
+                      className="mt-[7px] h-2 w-2 shrink-0 border border-ink bg-yellow"
+                    />
+                    <span className="text-muted leading-relaxed">
+                      {highlight}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              {"outcome" in project && project.outcome && (
+                <div className="mt-8 border-2 border-ink bg-surface p-5 shadow-brutal-sm">
+                  <div className="font-mono text-xs uppercase tracking-wider text-muted">
+                    Outcome
+                  </div>
+                  <p className="mt-2 text-ink leading-relaxed">
+                    {project.outcome}
+                  </p>
+                </div>
+              )}
+
+              <SectionLabel className="mt-8 mb-4">Built with</SectionLabel>
+              <Chips chips={project.technologies} />
+
               {project.artifact && (
                 <div className="mt-6 pt-6 border-t border-border">
                   <div className="font-mono text-xs uppercase tracking-wider text-muted">
@@ -289,12 +401,31 @@ const SpringModal = ({
                 </div>
               )}
             </div>
+            </div>
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
   );
 };
+
+const SectionLabel: React.FC<{
+  children: React.ReactNode;
+  className?: string;
+}> = ({ children, className = "" }) => (
+  <div className={`flex items-center gap-3 ${className}`}>
+    <span className="font-mono text-xs uppercase tracking-wider text-muted whitespace-nowrap">
+      {children}
+    </span>
+    <span aria-hidden className="h-px flex-1 bg-border" />
+  </div>
+);
+
+function formatDuration(duration?: { from: string; to: string }): string {
+  if (!duration?.from) return "";
+  if (!duration.to || duration.to === duration.from) return duration.from;
+  return `${duration.from}–${duration.to}`;
+}
 
 function notEmpty<T>(value: T | null | undefined): value is T {
   return value !== null && value !== undefined;

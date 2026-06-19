@@ -3,41 +3,48 @@
     "id": "kipti",
     "company": "Startup",
     "title": "AI-enhanced full stack SaaS platform",
+    "role": "Technical Lead",
     "duration": { "from": "2025", "to": "2026" },
-    "description": "Architected and built an AI-enhanced full-stack SaaS platform as technical lead. Established infrastructure, including AWS deployment (ECS, RDS), CI/CD pipelines, and automated testing. Adopted AI-first development approach using Claude and GPT-4 for code review, refactoring suggestions, and rapid iteration on complex features.",
+    "summary": "Took an AI-enhanced SaaS product from an early MVP to production as the founding engineer.",
+    "context": "Joined a startup as technical lead to build a knowledge-management platform. Small codebase, no infrastructure, an aggressive timeline — every architectural decision was mine to make and own.",
+    "highlights": [
+      "Architected and built the full stack: a React / Next.js frontend, a Hono RPC backend, and PostgreSQL with Drizzle ORM.",
+      "Stood up the entire cloud setup on Hetzner Cloud with Kubernetes, CI/CD pipelines, and automated testing.",
+      "Integrated LLM features end to end with the AI SDK, designing the prompt flows and streaming UX.",
+      "Adopted an AI-first workflow for code review, refactoring, and rapid iteration on complex features."
+    ],
     "metric": { "value": "0→1", "label": "Built & shipped as technical lead" },
-    "technologies": ["React", "NextJS", "TypeScript", "Hono", "AI SDK", "PostgreSQL", "Terraform", "AWS"]
+    "technologies": ["React", "NextJS", "TypeScript", "Hono", "AI SDK", "PostgreSQL", "Kubernetes", "Hetzner Cloud"]
   },
   {
     "id": "sphere",
     "company": "Aviation industry",
     "title": "Angular migration",
+    "role": "Senior Software Engineer",
     "duration": { "from": "2024", "to": "2025" },
-    "description": "Led Angular migration strategy for .NET WebForms application, architecting a new frontend and driving technical decisions.",
-    "technologies": ["Angular", "TypeScript", "RxJs"]
-  },
-  {
-    "id": "food",
-    "company": "Freelance",
-    "title": "Food Board",
-    "duration": { "from": "2024", "to": "" },
-    "description": "Based on Figma designs I Implemented the needed components pixel perfect. I focused on making the components fast and robust. Architecture decisions focused on readability and reusability. As responsiveness was important, I focused on a smooth transition throughout all screen sizes. Where designs for mobile were missing, I created them myself in coordination with the customer.",
-    "technologies": ["React", "NextJS", "TypeScript"]
-  },
-  {
-    "id": "dashboard",
-    "company": "Freelance",
-    "title": "Daily Dashboard",
-    "duration": { "from": "2024", "to": "" },
-    "description": "Developing a dashboard which connects multiple APIs to provide a nice overview of the day. Utilized caching for faster response times esp. for expensive calls. Migrated to zoneless Angular 18 with signals to improve performance.",
-    "technologies": ["Angular", "NestJS", "TypeScript", "Mongoose", "RxJs", "Zoneless", "Signals"]
+    "summary": "Led the frontend modernization of a business-critical .NET WebForms application to Angular.",
+    "context": "An enterprise aviation client ran a business-critical application on aging .NET WebForms. I was brought in to define and lead the migration to a modern Angular frontend.",
+    "highlights": [
+      "Defined the migration strategy and target architecture for the new Angular frontend.",
+      "Drove the key technical decisions and set the patterns the team built on.",
+      "Prioritized technical excellence and performance from the start."
+    ],
+    "technologies": ["Angular", "TypeScript", "RxJs", "NX"]
   },
   {
     "id": "critique",
     "company": "Google",
     "title": "Streamlining Code Review",
+    "role": "Software Engineer (L3)",
     "duration": { "from": "2022", "to": "2023" },
-    "description": "Part of a small, high-impact team maintaining a code review platform for 80,000+ developers, owning critical features that ensured global developer productivity and satisfaction. Led data-driven product improvements by analyzing user behavior patterns, iterating on solutions, and implementing features that measurably improved developer efficiency and satisfaction: improved IDE integration, reduced review friction, and optimized workflows. My work led to 25+ SWE annual productivity savings.",
+    "summary": "Owned high-impact features on Google's internal code review platform, used by 80,000+ developers.",
+    "context": "Part of a small, high-impact team maintaining the code review platform behind Google's entire engineering org. The features we owned directly shaped global developer productivity and satisfaction.",
+    "highlights": [
+      "Led data-driven product improvements by analyzing user behavior patterns.",
+      "Improved IDE integration and measurably reduced review friction.",
+      "Optimized workflows through iterative, measured changes."
+    ],
+    "outcome": "The improvements contributed to 25+ SWE-years of annual productivity savings across the org.",
     "metric": { "value": "25+ SWE-yrs", "label": "Productivity saved · 80k+ developers" },
     "technologies": ["Angular", "TypeScript", "NgRx", "RxJs"]
   },
@@ -45,8 +52,15 @@
     "id": "cider",
     "company": "Google",
     "title": "Code Review IDE Integration",
+    "role": "Software Engineer (L3)",
     "duration": { "from": "2022", "to": "2023" },
-    "description": "For the internal Google IDE (VSCode based) I worked on integrating code review artifacts into it. This makes it easier for users to work on comments they got on their code. Each feature was carefully planned in coordinance with UX research and rolled out to gradually. All while monitoring performance and satisfaction of over 80k users.",
+    "summary": "Brought code review artifacts directly into Google's internal VS Code–based IDE.",
+    "context": "Integrated code review artifacts into Google's internal IDE (VS Code based), so developers could act on the comments they receive on their code without ever leaving their editor.",
+    "highlights": [
+      "Designed and built the in-IDE code review integration.",
+      "Planned each feature in close coordination with UX research.",
+      "Rolled out gradually while monitoring performance and satisfaction across 80k+ users."
+    ],
     "metric": { "value": "80k+", "label": "Developers on the integrated IDE" },
     "technologies": ["TypeScript", "VSCode API", "RxJs"]
   },
@@ -54,8 +68,15 @@
     "id": "visana",
     "company": "Visana",
     "title": "Insurance Calculator",
+    "role": "Software Engineer",
     "duration": { "from": "2021", "to": "2022" },
-    "description": "I developed an online insurance calculator where users can browse and select their individual health insurance. It's basically a big fancy form, so validation of inputs played a crucial role. Naturally I took part in planning and execution of features in a Scrum based team.",
+    "summary": "A public-facing health-insurance calculator where users configure and price their own coverage.",
+    "context": "Visana needed an online calculator that lets users browse and assemble their individual health insurance — essentially a large, high-stakes form where input validation is everything.",
+    "highlights": [
+      "Built the calculator front to back, with validation as a first-class concern.",
+      "Worked in a Scrum team, taking part in feature planning and execution.",
+      "Backed the frontend with a Java / Spring Boot service."
+    ],
     "metric": { "value": "Live", "label": "In production at visana.ch" },
     "technologies": [
       "Angular",
@@ -75,18 +96,27 @@
     "id": "ticket",
     "company": "SBB",
     "title": "Modernize the Ticket Vending Machine",
+    "role": "Software Engineer",
     "duration": { "from": "2020", "to": "2021" },
-    "description": "Rebuilt, in a team of <10 people, Swiss Federal Railways (SBB) ticket vending machine interface, serving millions of passengers across Switzerland's 1,000+ self-service terminals. Architected and owned state machine logic for critical payment processing, ticket printing, and transaction workflows, ensuring fault-tolerant operation for 24/7 unattended deployment across machines nationwide. Collaborated with disability advocacy organizations throughout the development lifecycle, conducting usability testing with users with visual, motor, and cognitive impairments to ensure legal accessibility compliance and universal usability.",
+    "summary": "Rebuilt the ticket-machine interface used across Switzerland's 1,000+ self-service rail terminals.",
+    "context": "In a team of fewer than 10, we rebuilt the Swiss Federal Railways (SBB) ticket vending machine interface — software that serves millions of passengers and must run unattended, 24/7, on terminals nationwide.",
+    "highlights": [
+      "Architected and owned the state machine logic for payment processing, ticket printing, and transaction workflows.",
+      "Engineered for fault-tolerant, 24/7 unattended operation across 1,000+ terminals.",
+      "Collaborated with disability advocacy organizations throughout the development lifecycle.",
+      "Built the UI for performance and failure tolerance on resource-constrained terminals where peripherals and network paths can fail mid-transaction."
+    ],
     "metric": { "value": "1,000+", "label": "Terminals serving millions of passengers" },
     "technologies": [
       "TypeScript",
+      "Web Components",
       "Stencil",
       "Jest",
       "Cypress",
       "Webpack",
+      "Xstate",
       "Java",
-      "Spring Boot",
-      "Xstate"
+      "Spring Boot"
     ],
     "artifact": {
       "name": "Press article",
@@ -97,8 +127,15 @@
     "id": "tracking",
     "company": "SBB",
     "title": "Custom Tracking Library",
+    "role": "Software Engineer",
     "duration": { "from": "2020", "to": "2021" },
-    "description": "To be GDPR compliant and not reliant on Googles tracking we developed cross-browser compatible library to track user behaviour and displayed contents. This package grew to be a neccessary dependency on the SBB webite, so a very broad compatibility of browsers and versions was crucial. We ensured this by utilizing test driven development and testing our code in browsers on all platforms using BrowserStack.",
+    "summary": "A GDPR-compliant, Google-free analytics library that became a core SBB dependency.",
+    "context": "To stay GDPR-compliant and independent of Google's tracking, we built a cross-browser library to track user behavior and displayed content. It grew into a necessary dependency across the SBB website, so extremely broad browser and version compatibility was non-negotiable.",
+    "highlights": [
+      "Built a failure-tolerant tracking library, published it to npm, and shipped it as a core dependency across the SBB website.",
+      "Targeted every browser on every device — legacy versions included — where broad compatibility was non-negotiable.",
+      "Backed that bar with TDD, a large suite of unit and UI tests, and extensive real-device validation on BrowserStack."
+    ],
     "metric": { "value": "SBB-wide", "label": "GDPR-compliant tracking, published to npm" },
     "technologies": ["JavaScript", "Karma", "Babel", "Webpack", "BrowserStack", "TDD"],
     "artifact": {
@@ -110,8 +147,15 @@
     "id": "quiz",
     "company": "Zühlke",
     "title": "Mobile Security Training Quiz",
+    "role": "Software Engineer",
     "duration": { "from": "2019", "to": "2020" },
-    "description": "Mobile-first, card-based quiz which let's users playfully learn about security topics. I oversaw team progress and helped planning features. Also I coordinated communications and discussion with the UI team.",
+    "summary": "A playful, lightly competitive quiz that trains colleagues on security topics.",
+    "context": "A mobile-first, card-based quiz that lets teams learn security topics playfully — with a competitive edge between colleagues. Built in a small team of fewer than 10 and sold to companies as a training product on Microsoft AppSource.",
+    "highlights": [
+      "Oversaw team progress and helped plan the feature roadmap.",
+      "Shaped the playful, competitive mechanics that make the training stick.",
+      "Coordinated communication and discussion with the UI team."
+    ],
     "technologies": ["React", "JavaScript", "Redux", "Jest"],
     "artifact": {
       "name": "Microsoft Appsource",
@@ -123,7 +167,14 @@
     "company": "MaibornWolff",
     "title": "Technological Research in AR & VR",
     "duration": { "from": "2017", "to": "2018" },
-    "description": "AR prototype to overlook and maintain conveyor belts in a factory. Fot this a digital overlay was created, signaling the status of each component. This would enable a maintenance worker an immediate overview of the state of the facility. The anslysis of its performance with a user-study showed that response time and confidence of the users increased significantly.",
+    "summary": "An AR prototype that lets maintenance workers read a factory's status at a glance.",
+    "context": "A technological research project: an AR prototype to oversee and maintain factory conveyor belts. A digital overlay signals the status of each component, giving a maintenance worker an immediate read on the state of the whole facility.",
+    "highlights": [
+      "Built the AR overlay that surfaces real-time component status.",
+      "Designed it to give maintenance workers an at-a-glance facility overview.",
+      "Ran a user study measuring performance and user confidence."
+    ],
+    "outcome": "The study showed that user response time and confidence both improved significantly with the overlay.",
     "technologies": ["Unity", "C#", "HoloLens"]
   },
   {
@@ -131,23 +182,42 @@
     "company": "BMW",
     "title": "Car Interior Control System Prototype",
     "duration": { "from": "2016", "to": "2017" },
-    "description": "Exploratory development of an Android app to control interior functionality. For this I reverse engineered an existing control app and bundeled its functionality to increase helpfulness and satisfaction.",
+    "summary": "An exploratory Android app to control vehicle interior functions from a phone.",
+    "context": "Exploratory development of an Android app to control interior vehicle functionality, exploring how it could be made more helpful and satisfying to use.",
+    "highlights": [
+      "Reverse-engineered an existing control app to understand its behavior.",
+      "Re-bundled and reorganized its functionality to improve usefulness and satisfaction."
+    ],
     "technologies": ["Android", "Java", "Reverse Engineering"]
   },
   {
     "id": "home",
     "company": "KundoXT",
     "title": "Smart Home Control",
+    "role": "Frontend Engineer",
     "duration": { "from": "2016", "to": "" },
-    "description": "I lead the technical development of a web-based smart home app.",
-    "technologies": ["Angular", "JavaScript", "Apache Cordova"]
+    "summary": "Built the full frontend of a Cordova smart-home app designed to help elderly people live independently.",
+    "context": "KundoXT was building a smart-home system aimed at supporting elderly people in their daily lives. The companion app — Angular 2 on Apache Cordova — let users view and control their smart-home features across devices. I joined a small team of fewer than 10 to build out the frontend.",
+    "highlights": [
+      "Built the entire frontend in Angular, with only minor help.",
+      "Displayed and controlled the home's smart features through a cross-platform Cordova app.",
+      "Designed the experience around an elderly, accessibility-minded audience."
+    ],
+    "outcome": "The smart-home product the app controls was released to customers a few months later.",
+    "technologies": ["Angular 2", "JavaScript", "Apache Cordova"]
   },
   {
     "id": "vr",
     "company": "Audi",
     "title": "In-Car VR Experience Prototype",
     "duration": { "from": "2015", "to": "" },
-    "description": "Researched and implemented an in-car VR experience using live vehicle data. In this exploratory prototype it was necessary to work on a wide variety of tasks, including gathering test data or setting up a test environment to test features outside of the car. Piping the live-data into the program was done via transformations in C++, the actual program ran on C#. In-car VR is prone to nausea and virtigo, so I tested user acceptance of the concept with a focus on that.",
+    "summary": "An in-car VR prototype driven by live vehicle data — an early take on what later became holoride.",
+    "context": "Researched and built an exploratory in-car VR experience powered by live vehicle data. The work spanned everything from gathering test data to building a test environment so features could be validated outside the car. In-car VR is prone to nausea and vertigo, which made user acceptance the central question.",
+    "highlights": [
+      "Piped live vehicle data into the experience via C++ transformations, with the main program in C# / Unity.",
+      "Built a test environment to develop and validate features outside the vehicle.",
+      "Focused user testing on comfort, nausea, and vertigo to gauge acceptance of the concept."
+    ],
     "technologies": ["Unity", "C#", "ADTF", "C++"],
     "artifact": {
       "name": "Press article",
