@@ -158,8 +158,8 @@ const ProjectCard: React.FC<{
         )}
         {featured && metric && (
           <div className="absolute left-0 bottom-0 bg-bg border-t-2 border-r-2 border-ink px-3 py-2 max-w-[85%]">
-            <div className="font-sans font-bold text-ink leading-none text-xl">
-              <span className="bg-yellow box-decoration-clone px-1">
+            <div className="font-sans font-bold leading-none text-xl">
+              <span className="bg-yellow text-black box-decoration-clone px-1">
                 {metric.value}
               </span>
             </div>
@@ -177,7 +177,7 @@ const ProjectCard: React.FC<{
       </h3>
       {!featured && metric ? (
         <div className="mt-2 flex items-baseline gap-2 text-xs text-muted">
-          <span className="font-sans font-bold text-ink bg-yellow box-decoration-clone px-1">
+          <span className="font-sans font-bold text-black bg-yellow box-decoration-clone px-1">
             {metric.value}
           </span>
           <span className="font-mono leading-tight">{metric.label}</span>
@@ -260,7 +260,7 @@ const SpringModal = ({
               </h1>
               {"metric" in project && project.metric && (
                 <div className="mt-4 flex items-baseline gap-3">
-                  <span className="font-sans font-bold text-2xl text-ink leading-none bg-yellow box-decoration-clone px-1">
+                  <span className="font-sans font-bold text-2xl text-black leading-none bg-yellow box-decoration-clone px-1">
                     {project.metric.value}
                   </span>
                   <span className="font-mono text-xs uppercase tracking-wider text-muted leading-tight">
