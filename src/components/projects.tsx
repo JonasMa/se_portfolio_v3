@@ -23,7 +23,6 @@ const featuredIds = [
   "kipti",
   "critique",
   "ticket",
-  "visana",
   "cider",
   "tracking",
 ];
