@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Impressum",
+  robots: { index: false, follow: true },
+  alternates: { canonical: "/impressum" },
+};
 
 const Impressum: React.FC = () => (
   <div className="container font-mono text-ink mx-auto py-12 px-4">

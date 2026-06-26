@@ -65,10 +65,11 @@ const CV = () => (
       <div className="flex gap-8 flex-col sm:flex-row">
         <div className="basis-2/3 leading-relaxed">
           My journey in computer science began somewhat by chance, but quickly
-          let me to find my passion for user-centered web development. Over the
-          past five years I specialized in crafting beautiful, functional, and
-          accessible websites that prioritize user experience. I comfortably
-          navigate the entire stack with Angular and React being my go-to
+          let me to find my passion for user-centered frontend and full-stack
+          web development. Over the past five years I specialized in crafting
+          beautiful, functional, and accessible web applications that prioritize
+          user experience. As a full-stack developer I comfortably navigate the
+          entire stack, with Angular and React being my go-to frontend
           technologies to create digital experiences that delight users. I like
           to leverage AI to stay productive and efficient.
           <div className="flex gap-4 items-center mt-4">
