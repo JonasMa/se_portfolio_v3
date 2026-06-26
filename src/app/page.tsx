@@ -46,7 +46,9 @@ const IndexPage: React.FC = () => {
           <div className="text-2xl sm:text-3xl tracking-tight">
             I&apos;m a{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">Freelance Web Engineer</span>
+              <span className="relative z-10">
+                Freelance Frontend &amp; Full-Stack Developer
+              </span>
               <svg
                 aria-hidden
                 className="absolute left-0 right-0 -bottom-2 w-full h-2.5 text-yellow"
@@ -64,10 +66,11 @@ const IndexPage: React.FC = () => {
             </span>
           </div>
           <div className="font-sans mt-4 sm:w-2/3 text-muted leading-relaxed">
-            I&apos;m a software engineer with seven years of experience at
-            companies like Google. I like building fast, reliable and accessible
-            web experiences over the full stack. Also I love a good challenge.
-            If you got one - hit me up!
+            I&apos;m a frontend &amp; full-stack developer with seven years of
+            experience at companies like Google. I build fast, reliable and
+            accessible web applications across the full stack with Angular,
+            React, Next.js and TypeScript. Also I love a good challenge. If you
+            got one - hit me up!
           </div>
           <div className="flex gap-4">
             <Button href="mailto:contact@jmattes.de">Contact me</Button>
