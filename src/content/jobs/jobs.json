@@ -31,13 +31,13 @@
   },
   {
     "company": "KundoXT",
-    "duration": { "from": "2016", "to": "" },
+    "duration": { "from": "2016", "to": "2016" },
     "description": "Lead front end development in a small team developing a platform-agnostic smart home app.",
     "technologies": ["JavaScript", "Angular", "Apache Cordova"]
   },
   {
     "company": "Audi",
-    "duration": { "from": "2015", "to": "" },
+    "duration": { "from": "2015", "to": "2015" },
     "description": "Implemented an in-car VR prototype and reasearched user acceptance and motion sickness.",
     "technologies": ["Unity", "Virtual Reality", "C#"]
   }

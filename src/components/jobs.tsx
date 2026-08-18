@@ -12,7 +12,7 @@ export default function Jobs() {
         >
           <div className="font-mono text-sm text-muted md:pt-1.5">
             {duration.from}
-            {duration.to ? ` – ${duration.to}` : " – Present"}
+            {!duration.to ? " – Present" : duration.to !== duration.from ? ` – ${duration.to}` : ""}
           </div>
           <div>
             <h3 className="font-sans font-bold text-xl tracking-tight text-ink">
