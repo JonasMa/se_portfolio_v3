@@ -95,7 +95,7 @@
   {
     "id": "ticket",
     "company": "SBB",
-    "title": "Modernize the Ticket Vending Machine",
+    "title": "SBB Ticket Terminal Modernization",
     "role": "Software Engineer",
     "duration": { "from": "2020", "to": "2021" },
     "summary": "Rebuilt the ticket-machine interface used across Switzerland's 1,000+ self-service rail terminals.",
